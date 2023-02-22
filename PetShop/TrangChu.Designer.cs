@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.pnSlideMenu = new System.Windows.Forms.Panel();
             this.btThoat = new System.Windows.Forms.Button();
             this.btDoanhThu = new System.Windows.Forms.Button();
@@ -42,8 +43,11 @@
             this.btSanPham = new System.Windows.Forms.Button();
             this.pnLogo = new System.Windows.Forms.Panel();
             this.pnChildForm = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnSlideMenu.SuspendLayout();
             this.pnDonHangSubMenu.SuspendLayout();
+            this.pnLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnSlideMenu
@@ -85,7 +89,7 @@
             this.btDoanhThu.FlatAppearance.BorderSize = 0;
             this.btDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDoanhThu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btDoanhThu.Location = new System.Drawing.Point(0, 533);
+            this.btDoanhThu.Location = new System.Drawing.Point(0, 527);
             this.btDoanhThu.Name = "btDoanhThu";
             this.btDoanhThu.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
             this.btDoanhThu.Size = new System.Drawing.Size(250, 58);
@@ -100,7 +104,7 @@
             this.btKhachHang.FlatAppearance.BorderSize = 0;
             this.btKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btKhachHang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btKhachHang.Location = new System.Drawing.Point(0, 475);
+            this.btKhachHang.Location = new System.Drawing.Point(0, 469);
             this.btKhachHang.Name = "btKhachHang";
             this.btKhachHang.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
             this.btKhachHang.Size = new System.Drawing.Size(250, 58);
@@ -115,7 +119,7 @@
             this.btNhanVien.FlatAppearance.BorderSize = 0;
             this.btNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNhanVien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btNhanVien.Location = new System.Drawing.Point(0, 417);
+            this.btNhanVien.Location = new System.Drawing.Point(0, 411);
             this.btNhanVien.Name = "btNhanVien";
             this.btNhanVien.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
             this.btNhanVien.Size = new System.Drawing.Size(250, 58);
@@ -130,7 +134,7 @@
             this.btKhuyenMai.FlatAppearance.BorderSize = 0;
             this.btKhuyenMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btKhuyenMai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btKhuyenMai.Location = new System.Drawing.Point(0, 359);
+            this.btKhuyenMai.Location = new System.Drawing.Point(0, 353);
             this.btKhuyenMai.Name = "btKhuyenMai";
             this.btKhuyenMai.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
             this.btKhuyenMai.Size = new System.Drawing.Size(250, 58);
@@ -145,9 +149,9 @@
             this.pnDonHangSubMenu.Controls.Add(this.btDHDaXacNhan);
             this.pnDonHangSubMenu.Controls.Add(this.btDHDoiXacNhan);
             this.pnDonHangSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDonHangSubMenu.Location = new System.Drawing.Point(0, 266);
+            this.pnDonHangSubMenu.Location = new System.Drawing.Point(0, 260);
             this.pnDonHangSubMenu.Name = "pnDonHangSubMenu";
-            this.pnDonHangSubMenu.Size = new System.Drawing.Size(250, 93);
+            this.pnDonHangSubMenu.Size = new System.Drawing.Size(250, 110);
             this.pnDonHangSubMenu.TabIndex = 4;
             // 
             // btDHDaHuy
@@ -156,10 +160,10 @@
             this.btDHDaHuy.FlatAppearance.BorderSize = 0;
             this.btDHDaHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDHDaHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btDHDaHuy.Location = new System.Drawing.Point(0, 60);
+            this.btDHDaHuy.Location = new System.Drawing.Point(0, 66);
             this.btDHDaHuy.Name = "btDHDaHuy";
             this.btDHDaHuy.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.btDHDaHuy.Size = new System.Drawing.Size(250, 30);
+            this.btDHDaHuy.Size = new System.Drawing.Size(250, 33);
             this.btDHDaHuy.TabIndex = 2;
             this.btDHDaHuy.Text = "Đã huỷ";
             this.btDHDaHuy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,10 +176,10 @@
             this.btDHDaXacNhan.FlatAppearance.BorderSize = 0;
             this.btDHDaXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDHDaXacNhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btDHDaXacNhan.Location = new System.Drawing.Point(0, 30);
+            this.btDHDaXacNhan.Location = new System.Drawing.Point(0, 33);
             this.btDHDaXacNhan.Name = "btDHDaXacNhan";
             this.btDHDaXacNhan.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.btDHDaXacNhan.Size = new System.Drawing.Size(250, 30);
+            this.btDHDaXacNhan.Size = new System.Drawing.Size(250, 33);
             this.btDHDaXacNhan.TabIndex = 1;
             this.btDHDaXacNhan.Text = "Đã xác nhận";
             this.btDHDaXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,7 +195,7 @@
             this.btDHDoiXacNhan.Location = new System.Drawing.Point(0, 0);
             this.btDHDoiXacNhan.Name = "btDHDoiXacNhan";
             this.btDHDoiXacNhan.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.btDHDoiXacNhan.Size = new System.Drawing.Size(250, 30);
+            this.btDHDoiXacNhan.Size = new System.Drawing.Size(250, 33);
             this.btDHDoiXacNhan.TabIndex = 0;
             this.btDHDoiXacNhan.Text = "Đợi xác nhận";
             this.btDHDoiXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,7 +211,7 @@
             this.btDonHang.Location = new System.Drawing.Point(0, 208);
             this.btDonHang.Name = "btDonHang";
             this.btDonHang.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.btDonHang.Size = new System.Drawing.Size(250, 58);
+            this.btDonHang.Size = new System.Drawing.Size(250, 52);
             this.btDonHang.TabIndex = 3;
             this.btDonHang.Text = "Đơn hàng";
             this.btDonHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,10 +236,11 @@
             // 
             // pnLogo
             // 
+            this.pnLogo.Controls.Add(this.picLogo);
             this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
             this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(250, 150);
+            this.pnLogo.Size = new System.Drawing.Size(250, 180);
             this.pnLogo.TabIndex = 0;
             // 
             // pnChildForm
@@ -246,6 +251,17 @@
             this.pnChildForm.Name = "pnChildForm";
             this.pnChildForm.Size = new System.Drawing.Size(1080, 745);
             this.pnChildForm.TabIndex = 1;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(250, 150);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // TrangChu
             // 
@@ -263,6 +279,8 @@
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.pnSlideMenu.ResumeLayout(false);
             this.pnDonHangSubMenu.ResumeLayout(false);
+            this.pnLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +301,6 @@
         private Button btNhanVien;
         private Button btKhuyenMai;
         private Panel pnChildForm;
+        private PictureBox picLogo;
     }
 }

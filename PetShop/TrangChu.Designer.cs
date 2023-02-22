@@ -49,7 +49,7 @@
             // pnSlideMenu
             // 
             this.pnSlideMenu.AutoScroll = true;
-            this.pnSlideMenu.BackColor = System.Drawing.Color.MistyRose;
+            this.pnSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(172)))));
             this.pnSlideMenu.Controls.Add(this.btThoat);
             this.pnSlideMenu.Controls.Add(this.btDoanhThu);
             this.pnSlideMenu.Controls.Add(this.btKhachHang);

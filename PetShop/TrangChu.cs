@@ -41,7 +41,7 @@ namespace BanHangChoPet
         #region DonHangSubMenu 
         private void btDHDoiXacNhan_Click(object sender, EventArgs e)
         {
-            //code
+            openChildForm(new DHDoiXacNhan());
             hideSubMenu();
         }
 
@@ -94,6 +94,18 @@ namespace BanHangChoPet
         private void TrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
             function.Disconnect();
+        }
+
+        private void btNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new QLNhanVien());
+            hideSubMenu();
+        }
+
+        private void btKhachHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new QLKhachHang());
+            hideSubMenu();
         }
     }
 }

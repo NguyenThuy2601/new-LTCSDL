@@ -52,7 +52,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PetShop.Properties.Resources.nuoi_cho_meo_2505160049;
             this.pictureBox1.Location = new System.Drawing.Point(515, 52);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(333, 347);
@@ -68,7 +67,7 @@
             this.label2.ForeColor = System.Drawing.Color.LemonChiffon;
             this.label2.Location = new System.Drawing.Point(73, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 43);
+            this.label2.Size = new System.Drawing.Size(326, 43);
             this.label2.TabIndex = 2;
             this.label2.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -162,6 +161,7 @@
             this.btnDangNhap.Text = "ĐĂNG NHẬP";
             this.btnDangNhap.TextColor = System.Drawing.Color.Indigo;
             this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnDangKy
             // 
@@ -209,6 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.btnDangNhap);
@@ -226,6 +227,7 @@
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DangNhap_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

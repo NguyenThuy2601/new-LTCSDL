@@ -127,6 +127,7 @@
             this.btnDanhMucCho.Text = "Danh Mục Cho Chó";
             this.btnDanhMucCho.TextColor = System.Drawing.Color.Turquoise;
             this.btnDanhMucCho.UseVisualStyleBackColor = false;
+            this.btnDanhMucCho.Click += new System.EventHandler(this.btnDanhMucCho_Click);
             // 
             // btnTrangChu
             // 
@@ -151,6 +152,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -170,6 +172,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "TrangChuKhachHang";
             this.Text = "Trang Chủ Khách Hàng";
+            this.Activated += new System.EventHandler(this.TrangChuKhachHang_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrangChuKhachHang_FormClosed);
             this.Load += new System.EventHandler(this.TrangChuKhachHang_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

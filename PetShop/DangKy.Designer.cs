@@ -60,7 +60,7 @@
             this.label2.ForeColor = System.Drawing.Color.LemonChiffon;
             this.label2.Location = new System.Drawing.Point(104, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 43);
+            this.label2.Size = new System.Drawing.Size(288, 43);
             this.label2.TabIndex = 3;
             this.label2.Text = "ĐĂNG KÝ TÀI KHOẢN";
             // 
@@ -195,6 +195,7 @@
             this.btnDangKy.Text = "ĐĂNG KÝ";
             this.btnDangKy.TextColor = System.Drawing.Color.Indigo;
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnDangNhap
             // 
@@ -343,6 +344,7 @@
             this.txtSDT.TabIndex = 33;
             this.txtSDT.Texts = "";
             this.txtSDT.UnderlinedStyle = true;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiaChi
             // 

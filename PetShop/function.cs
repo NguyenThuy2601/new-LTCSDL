@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace PetShop
 {
     
     class function
     {
-        public static SqlConnection Con;
+        public static SqlConnection Con = null;
 
         public static void Connect()
         {
-            Con = new SqlConnection();
-            Con.ConnectionString = @"Data Source=DESKTOP-4CBR9B5;Initial Catalog=PetShop;Integrated Security=True";
-            Con.Open();
-            if (Con.State == ConnectionState.Open)
-                MessageBox.Show("success");
+            if(Con == null)
+            {
+                Con = new SqlConnection();
+                Con.ConnectionString = @"Data Source=DESKTOP-4CBR9B5;Initial Catalog=PetShop;Integrated Security=True";
+                Con.Open();
+                if (Con.State == ConnectionState.Open)
+                    MessageBox.Show("success");
+            }    
+            
 
         }
         public static void Disconnect()
@@ -113,6 +118,13 @@ namespace PetShop
             cmd.Dispose();//Giải phóng bộ nhớ
             cmd = null;
             return null;
+        }
+        public static string Encrypt(string v)
+        {
+            UTF8Encoding uTF8 = new UTF8Encoding();
+            byte[] data = MD5.HashData(uTF8.GetBytes(v));
+            return Convert.ToBase64String(data);
+
         }
     }
 }

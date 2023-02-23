@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PetShop
 {
-    public partial class SanPham : Form
+    public partial class ShowProduct : Form
     {
-        public SanPham()
+        public ShowProduct()
         {
             InitializeComponent();
-        }
-
-        private void picSP_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

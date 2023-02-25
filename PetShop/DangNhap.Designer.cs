@@ -45,16 +45,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 39);
+            this.label1.Location = new System.Drawing.Point(85, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(515, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(515, 42);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 347);
+            this.pictureBox1.Size = new System.Drawing.Size(333, 278);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -63,9 +64,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Indigo;
-            this.label2.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Sitka Heading", 18F);
             this.label2.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label2.Location = new System.Drawing.Point(73, 52);
+            this.label2.Location = new System.Drawing.Point(73, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(326, 43);
             this.label2.TabIndex = 2;
@@ -75,9 +76,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Indigo;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label3.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label3.Location = new System.Drawing.Point(30, 151);
+            this.label3.Location = new System.Drawing.Point(30, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 28);
             this.label3.TabIndex = 3;
@@ -87,9 +88,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Indigo;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label4.Location = new System.Drawing.Point(30, 205);
+            this.label4.Location = new System.Drawing.Point(30, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 28);
             this.label4.TabIndex = 4;
@@ -99,9 +100,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Indigo;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label6.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label6.Location = new System.Drawing.Point(31, 393);
+            this.label6.Location = new System.Drawing.Point(30, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(217, 28);
             this.label6.TabIndex = 10;
@@ -113,14 +114,15 @@
             this.txtEmail.BorderColor = System.Drawing.Color.Lavender;
             this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtEmail.BorderSize = 2;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(180, 139);
+            this.txtEmail.Location = new System.Drawing.Point(180, 111);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtEmail.PasswordChar = false;
-            this.txtEmail.Size = new System.Drawing.Size(307, 40);
+            this.txtEmail.Size = new System.Drawing.Size(307, 38);
             this.txtEmail.TabIndex = 29;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = true;
@@ -131,14 +133,15 @@
             this.txtPassWord.BorderColor = System.Drawing.Color.Lavender;
             this.txtPassWord.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtPassWord.BorderSize = 2;
-            this.txtPassWord.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassWord.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtPassWord.ForeColor = System.Drawing.Color.White;
-            this.txtPassWord.Location = new System.Drawing.Point(180, 193);
+            this.txtPassWord.Location = new System.Drawing.Point(180, 154);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassWord.Multiline = false;
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPassWord.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtPassWord.PasswordChar = true;
-            this.txtPassWord.Size = new System.Drawing.Size(307, 40);
+            this.txtPassWord.Size = new System.Drawing.Size(307, 38);
             this.txtPassWord.TabIndex = 30;
             this.txtPassWord.Texts = "";
             this.txtPassWord.UnderlinedStyle = true;
@@ -152,11 +155,12 @@
             this.btnDangNhap.BorderSize = 2;
             this.btnDangNhap.FlatAppearance.BorderSize = 0;
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnDangNhap.ForeColor = System.Drawing.Color.Indigo;
-            this.btnDangNhap.Location = new System.Drawing.Point(73, 287);
+            this.btnDangNhap.Location = new System.Drawing.Point(73, 230);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(165, 50);
+            this.btnDangNhap.Size = new System.Drawing.Size(165, 40);
             this.btnDangNhap.TabIndex = 31;
             this.btnDangNhap.Text = "ĐĂNG NHẬP";
             this.btnDangNhap.TextColor = System.Drawing.Color.Indigo;
@@ -174,9 +178,10 @@
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.ForeColor = System.Drawing.Color.Indigo;
-            this.btnDangKy.Location = new System.Drawing.Point(254, 390);
+            this.btnDangKy.Location = new System.Drawing.Point(254, 314);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(157, 31);
+            this.btnDangKy.Size = new System.Drawing.Size(180, 43);
             this.btnDangKy.TabIndex = 33;
             this.btnDangKy.Text = "Đăng Ký";
             this.btnDangKy.TextColor = System.Drawing.Color.Indigo;
@@ -192,11 +197,12 @@
             this.btnThoat.BorderSize = 2;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.Indigo;
-            this.btnThoat.Location = new System.Drawing.Point(289, 287);
+            this.btnThoat.Location = new System.Drawing.Point(289, 230);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(165, 50);
+            this.btnThoat.Size = new System.Drawing.Size(165, 40);
             this.btnThoat.TabIndex = 34;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.TextColor = System.Drawing.Color.Indigo;
@@ -205,10 +211,10 @@
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ClientSize = new System.Drawing.Size(871, 403);
             this.ControlBox = false;
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangKy);
@@ -223,6 +229,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

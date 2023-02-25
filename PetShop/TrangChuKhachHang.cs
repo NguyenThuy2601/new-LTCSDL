@@ -66,12 +66,30 @@ namespace PetShop
         private void TrangChuKhachHang_Activated(object sender, EventArgs e)
         {
             if (User.getID() != 0)
+            {
                 btnDangNhap.Visible = false;
+                btnDangXuat.Visible = true;
+            }    
+                
+            else
+            {
+                btnDangNhap.Visible = true;
+                btnDangXuat.Visible = false;
+            }    
+                
         }
 
         private void btnDanhMucCho_Click(object sender, EventArgs e)
         {
-            openChildForm(new ShowProduct());
+            openChildForm(new ShowProduct()); 
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            User.setUserInfo(0, null, null);
+            btnDangNhap.Visible = true;
+            btnDangXuat.Visible = false;
+
         }
     }
 }

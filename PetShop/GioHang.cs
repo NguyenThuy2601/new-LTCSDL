@@ -16,5 +16,12 @@ namespace PetShop
         {
             InitializeComponent();
         }
+
+        private void GioHang_Load(object sender, EventArgs e)
+        {
+            string sql = "select ct.* from GioHang gh, ChiTietGioHang ct "
+                        +"where gh.MaGH = ct.MaGH and gh.MaKH = '" + User.getID() +"'";
+            dataGridView1.DataSource = function.GetDataToTable(sql);
+        }
     }
 }

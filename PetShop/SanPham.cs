@@ -37,6 +37,7 @@ namespace PetShop
                 lblDiscount.Visible = false;
             }
             numericUpDown1.Maximum = int.Parse(qty);
+            
         }
         public string ID { get; set; }
         public void setPName(string value) 
@@ -45,7 +46,7 @@ namespace PetShop
         }
         public void setPrice(string value)
         {
-            lbGiaTien.Text = value + "VND";
+            lbGiaTien.Text = value + " VND";
         }
         public void setKmai(string value)
         {
@@ -68,14 +69,71 @@ namespace PetShop
             lbGiaTien.ForeColor = Color.Red;
         }
 
-        private void lbTenSp_Click(object sender, EventArgs e)
+        public int getSoLuong()
         {
+            return int.Parse(lbTonKho.Text);
+        }
+        
+        public int getPrice()
+        {
+            string[] tam = lbGiaTien.Text.Split(' ');
+            return int.Parse(tam[0]);
+        }
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            int price = getPrice();
+            int total = price * int.Parse(numericUpDown1.Value.ToString());
+            int recentQty = 0;
+            int remainQty = this.getSoLuong() - int.Parse(numericUpDown1.Value.ToString());
 
+            //lay id gio hang
+            string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
+            string GHid = function.RunQuery(sql);
+
+            //them moi vao chi tiet gio hang
+            sql = "select MaSP from ChiTietGioHang where MaGH = '"
+                    + GHid + "' and MaSP = '" + this.ID + "'";
+            if (function.RunQuery(sql) == null)
+            {
+                sql = "insert into ChiTietGioHang values('"
+                + GHid + "','"
+                + this.ID + "',"
+                + numericUpDown1.Value + ","
+                + total + ")";
+
+                function.RunNonQuery(sql);
+            }
+            else
+            {
+                string idSP = function.RunQuery(sql);
+                sql = "update ChiTietGioHang set SoLuong = SoLuong +"
+                + numericUpDown1.Value + ", TamTinh = TamTinh +"
+                + total
+                + "where MaSP ='" + this.ID + "' and MaGH = '" + GHid + "'";
+                function.RunNonQuery(sql);
+            }
+
+            //cap nhap so luong mon hang trong gio
+            sql = "select SoLuong from GioHang where MaGH = '" + GHid + "'";
+            recentQty = int.Parse(function.RunQuery(sql));
+            recentQty = recentQty + int.Parse(numericUpDown1.Value.ToString());
+            sql = "update GioHang set SoLuong ="
+                + recentQty 
+                + "where MaGH = '" + GHid + "'";
+            MessageBox.Show(sql);
+            function.RunNonQuery(sql);
+
+            //cap nhap so luong hang ton
+            sql = "update SanPham set SoLuong = " + remainQty + "where MaSP = '" + this.ID + "'";
+            function.RunNonQuery(sql);
         }
 
-        private void lblColor_Click(object sender, EventArgs e)
+        private void SanPham_VisibleChanged(object sender, EventArgs e)
         {
-
+            if (User.getID() == 0)
+                btnAddToCart.Visible = false;
+            else
+                btnAddToCart.Visible = true;
         }
     }
 }

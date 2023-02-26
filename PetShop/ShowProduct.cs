@@ -17,10 +17,7 @@ namespace PetShop
             InitializeComponent();
         }
 
-        //private void tryParse(string v)
-        //{
-        //    double.
-        //}
+       
 
         private void ShowProduct_Load(object sender, EventArgs e)
         {
@@ -66,7 +63,7 @@ namespace PetShop
 
         private void ShowProduct_FormClosed(object sender, FormClosedEventArgs e)
         {
-            function.Disconnect();
+           
         }
     }
 }

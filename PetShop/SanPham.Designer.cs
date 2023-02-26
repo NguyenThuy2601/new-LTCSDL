@@ -33,7 +33,7 @@
             this.lbGiaTien = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lbTonKho = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddToCart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
@@ -62,7 +62,6 @@
             this.lbTenSp.Size = new System.Drawing.Size(2, 18);
             this.lbTenSp.TabIndex = 2;
             this.lbTenSp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTenSp.Click += new System.EventHandler(this.lbTenSp_Click);
             // 
             // lbGiaTien
             // 
@@ -96,15 +95,16 @@
             this.lbTonKho.TabIndex = 7;
             this.lbTonKho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnAddToCart
             // 
-            this.button1.Location = new System.Drawing.Point(252, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 49);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Thêm vào giỏ hàng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddToCart.Location = new System.Drawing.Point(252, 343);
+            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(90, 49);
+            this.btnAddToCart.TabIndex = 8;
+            this.btnAddToCart.Text = "Thêm vào giỏ hàng";
+            this.btnAddToCart.UseVisualStyleBackColor = true;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // label2
             // 
@@ -132,7 +132,6 @@
             this.lblColor.Size = new System.Drawing.Size(72, 26);
             this.lblColor.TabIndex = 11;
             this.lblColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblColor.Click += new System.EventHandler(this.lblColor_Click);
             // 
             // numericUpDown1
             // 
@@ -152,7 +151,7 @@
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddToCart);
             this.Controls.Add(this.lbTonKho);
             this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.lbGiaTien);
@@ -162,6 +161,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SanPham";
             this.Text = "SanPham";
+            this.VisibleChanged += new System.EventHandler(this.SanPham_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.picSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -176,7 +176,7 @@
         private Label lbGiaTien;
         private Label lblDiscount;
         private Label lbTonKho;
-        private Button button1;
+        private Button btnAddToCart;
         private Label label2;
         private Label label4;
         private Label lblColor;

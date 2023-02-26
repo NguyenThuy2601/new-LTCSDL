@@ -69,12 +69,14 @@ namespace PetShop
             {
                 btnDangNhap.Visible = false;
                 btnDangXuat.Visible = true;
+                btnGioHang.Visible = true;
             }    
                 
             else
             {
                 btnDangNhap.Visible = true;
                 btnDangXuat.Visible = false;
+                btnGioHang.Visible = false;
             }    
                 
         }
@@ -89,6 +91,7 @@ namespace PetShop
             User.setUserInfo(0, null, null);
             btnDangNhap.Visible = true;
             btnDangXuat.Visible = false;
+            activeForm.Close();
 
         }
     }

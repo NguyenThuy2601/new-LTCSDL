@@ -1,3 +1,6 @@
+using System.Configuration;
+using System.Collections.Specialized;
+
 namespace BanHangChoPet
 {
     internal static class Program

@@ -82,6 +82,7 @@ namespace BanHangChoPet
         private void TrangChu_Load(object sender, EventArgs e)
         {
             function.Connect();
+            picLogo.LoadAsync(@"https://res.cloudinary.com/drrmia1ij/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1677065950/Capture-removebg_k3mb53.jpg");
         }
 
         private void btThoat_Click(object sender, EventArgs e)

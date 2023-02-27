@@ -23,7 +23,7 @@ namespace PetShop
         {
             function.Connect();
             int x = 0, y = 0;
-            string sql = "select s.*, km.PhanTram " +
+            string sql = "select top 10 s.*, km.PhanTram " +
                   "from SanPham  as s " +
                   "left join KhuyenMai as km"
                     + " on s.MaKM = km.MaKM";
@@ -35,7 +35,8 @@ namespace PetShop
                 string color = row["MauSac"].ToString();
                 string pic = row["Hinh"].ToString();
                 string soLuong = row["SoLuong"].ToString();
-                string giaBan = row["GiaBan"].ToString();
+                string giaBan = double.Parse(row["GiaBan"].ToString()).ToString();
+
                 string phantram = null;
                 if (row["PhanTram"].ToString() != "")
                 {
@@ -43,7 +44,7 @@ namespace PetShop
                     double tam = double.Parse(row["PhanTram"].ToString()) * 100;
                     phantram = int.Parse(tam.ToString()).ToString();
                     double percent = double.Parse(row["PhanTram"].ToString());
-                    double price = (double.Parse(giaBan) - (double.Parse(giaBan) * percent)) * 1000;
+                    double price = (double.Parse(giaBan) - (double.Parse(giaBan) * percent));
                     giaBan = price.ToString();
                 }
                 SanPham obj = new SanPham(id, pName, giaBan, soLuong, color, phantram, pic);
@@ -53,11 +54,11 @@ namespace PetShop
                 tableLayoutPanel1.Controls.Add(obj);
                 obj.Show();
                 y++;
-                if(y >= 2)
+                if (y >= 2)
                 {
                     y = 1;
                     x++;
-                }    
+                }
             }    
         }
 

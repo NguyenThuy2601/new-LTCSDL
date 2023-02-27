@@ -46,7 +46,8 @@ namespace PetShop
         }
         public void setPrice(string value)
         {
-            lbGiaTien.Text = value + " VND";
+            double p = double.Parse(value) * 1000;
+            lbGiaTien.Text = p.ToString()  + " VND";
         }
         public void setKmai(string value)
         {
@@ -77,7 +78,7 @@ namespace PetShop
         public int getPrice()
         {
             string[] tam = lbGiaTien.Text.Split(' ');
-            return int.Parse(tam[0]);
+            return int.Parse(tam[0]) ;
         }
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
@@ -85,6 +86,8 @@ namespace PetShop
             int total = price * int.Parse(numericUpDown1.Value.ToString());
             int recentQty = 0;
             int remainQty = this.getSoLuong() - int.Parse(numericUpDown1.Value.ToString());
+
+            MessageBox.Show(total.ToString());
 
             //lay id gio hang
             string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
@@ -98,8 +101,8 @@ namespace PetShop
                 sql = "insert into ChiTietGioHang values('"
                 + GHid + "','"
                 + this.ID + "',"
-                + numericUpDown1.Value + ","
-                + total + ")";
+                + numericUpDown1.Value + ",'"
+                + total + "')";
 
                 function.RunNonQuery(sql);
             }
@@ -118,14 +121,17 @@ namespace PetShop
             recentQty = int.Parse(function.RunQuery(sql));
             recentQty = recentQty + int.Parse(numericUpDown1.Value.ToString());
             sql = "update GioHang set SoLuong ="
-                + recentQty 
-                + "where MaGH = '" + GHid + "'";
-            MessageBox.Show(sql);
+                + recentQty
+                + " where MaGH = '" + GHid + "'";
             function.RunNonQuery(sql);
 
             //cap nhap so luong hang ton
             sql = "update SanPham set SoLuong = " + remainQty + "where MaSP = '" + this.ID + "'";
             function.RunNonQuery(sql);
+
+            //reset giao dien 
+            lbTonKho.Text = remainQty.ToString();
+            numericUpDown1.Value = 0;
         }
 
         private void SanPham_VisibleChanged(object sender, EventArgs e)

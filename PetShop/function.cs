@@ -122,8 +122,9 @@ namespace PetShop
         public static string Encrypt(string v)
         {
             UTF8Encoding uTF8 = new UTF8Encoding();
-            byte[] data = MD5.HashData(uTF8.GetBytes(v));
-            return Convert.ToBase64String(data);
+            //byte[] data = MD5.HashData(uTF8.GetBytes(v));
+            //return Convert.ToBase64String(data);
+            return null;
 
         }
     }

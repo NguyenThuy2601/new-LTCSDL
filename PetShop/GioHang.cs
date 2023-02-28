@@ -16,6 +16,7 @@ namespace PetShop
         {
             InitializeComponent();
         }
+ 
         private void LoadDataGridView()
         {
             string sql = "select ct.MaSP ,sp.TenSp, ct.SoLuong, ct.TamTinh from GioHang gh, ChiTietGioHang ct, SanPham sp"
@@ -23,71 +24,51 @@ namespace PetShop
                         + User.getID() + "'";
             dataGridView1.DataSource = function.GetDataToTable(sql);
         }
+        private int getProductQtyInCart()
+        {
+            string sql = "select SoLuong from GioHang where MaKH = '" + User.getID() + "'";
+            return int.Parse(function.RunQuery(sql));
+        }
+        private int Total()
+        {
+            int total = 0;
+            if (getProductQtyInCart() > 0)
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                    if(row.Cells["TamTinh"].Value != null)
+                        total += int.Parse(row.Cells["TamTinh"].Value.ToString());
+            return total;
+        }
+        private void setShipFee()
+        {
+            if (Total() > 500000)
+                lblShip.Text = "0";
+            else
+                lblShip.Text = (Total() * 0.2).ToString();
+        }
+        private void setTotal()
+        {
+            lblTotal.Text = (Total() + int.Parse(lblShip.Text)).ToString();
+        }
         private void GioHang_Load(object sender, EventArgs e)
         {
             this.LoadDataGridView();
-            btnDelete.Enabled = false;  
+            btnDelete.Enabled = false;
+            setShipFee();
+            setTotal();
         }
-
+        int max = 0;
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dataGridView1.CurrentRow.Selected = true;
             lblName.Text = dataGridView1.CurrentRow.Cells["TenSp"].Value.ToString();
-            numericUpDown1.Value = decimal.Parse(dataGridView1.CurrentRow.Cells["SoLuong"].Value.ToString());
+            lblQty.Text = dataGridView1.CurrentRow.Cells["SoLuong"].Value.ToString();
             btnDelete.Enabled = true;
             string sql = "select SoLuong from SanPham where MaSP = '" 
                         + dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString() + "'";
-            int max = int.Parse(function.RunQuery(sql));
-            numericUpDown1.Maximum = max;
+            max = int.Parse(function.RunQuery(sql));
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("hi");
-            int gap = 0;
-            string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
-            string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
-            int currentQty = int.Parse(dataGridView1.CurrentRow.Cells["SoLuong"]
-                             .Value.ToString());
-            string idGH = function.RunQuery(sql);
-
-            if (numericUpDown1.Value == 0)
-            {
-                sql = "DELETE ChiTietGioHang WHERE MaSP = '" + id + "'"
-                     + " and MaGH = '" + idGH + "'";
-                function.RunNonQuery(sql);
-                sql = "update SanPham set SoLuong =" + currentQty
-                        + "where MaSP = '" + id + "'";
-                function.RunNonQuery(sql);
-                lblName.Text = "";
-                numericUpDown1.Value = 0;
-                this.LoadDataGridView();
-                btnDelete.Enabled = false;
-            }
-            else
-            {
-                sql = "update ChiTietGioHang set SoLuong = "
-                    + numericUpDown1.Value
-                    + "where MaSP = '" + id + "'"
-                    + " and MaGH = '" + idGH + "'";
-                function.RunNonQuery(sql);
-                dataGridView1.CurrentRow.Cells["SoLuong"].Value = numericUpDown1.Value;
-            }
-
-            if (numericUpDown1.Value > currentQty)
-            {
-                gap = (int)numericUpDown1.Value - currentQty;
-                sql = "update SanPham set SoLuong = SoLuong - " + gap
-                       + "where MaSP = '" + id + "'";
-            }
-            else
-            {
-                gap = currentQty - (int)numericUpDown1.Value;
-                sql = "update SanPham set SoLuong = SoLuong + " + gap
-                       + "where MaSP = '" + id + "'";
-            }
-            function.RunNonQuery(sql);
-        }
+        
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -96,9 +77,8 @@ namespace PetShop
             string idGH = function.RunQuery(sql);
             int currentQty = int.Parse(dataGridView1.CurrentRow.Cells["SoLuong"]
                               .Value.ToString());
-
-            sql = "select SoLuong from SanPham where MaSP = '" + id + "'";
-            int remainQty = int.Parse(function.RunQuery(sql));
+            sql = "select count(MaSP) from ChiTietGioHang where MaGH = '" + idGH + "'";
+            int totalQty = int.Parse(function.RunQuery(sql));
 
 
             sql = "DELETE ChiTietGioHang WHERE MaSP = '" + id + "'"
@@ -106,20 +86,91 @@ namespace PetShop
             function.RunNonQuery(sql);
 
 
-            sql = "update SanPham set SanPham.SoLuong = " + (remainQty + currentQty)
+            sql = "update SanPham set SanPham.SoLuong = SoLuong +" + currentQty
                        + " where MaSP = '" + id + "'";
             function.RunNonQuery(sql);
 
-            sql = "update GioHang set GioHang.SoLuong = " + (dataGridView1.RowCount - 1)
+            sql = "update GioHang set GioHang.SoLuong = " + (totalQty - 1)
                    + " where MaGH = '" + idGH + "'";
             function.RunNonQuery(sql);
 
 
 
             lblName.Text = "";
-            numericUpDown1.ResetText();
+            lblQty.Text = "0";
             this.LoadDataGridView();
             btnDelete.Enabled = false;
+            MessageBox.Show(dataGridView1.RowCount.ToString());
+            //setShipFee();
+            //setTotal();
+        }
+
+        private void buttonCustom2_Click(object sender, EventArgs e)
+        {
+            string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
+            string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
+            int currentQty = int.Parse(dataGridView1.CurrentRow.Cells["SoLuong"]
+                             .Value.ToString());
+            string idGH = function.RunQuery(sql);
+
+            lblQty.Text = (int.Parse(lblQty.Text) - 1).ToString();
+
+            if (lblQty.Text == "0")
+            {
+                sql = "DELETE ChiTietGioHang WHERE MaSP = '" + id + "'"
+                     + " and MaGH = '" + idGH + "'";
+                function.RunNonQuery(sql);
+                sql = "update SanPham set SoLuong = SoLuong + " + currentQty
+                        + "where MaSP = '" + id + "'";
+                function.RunNonQuery(sql);
+                lblName.Text = "";
+                this.LoadDataGridView();
+                lblQty.Text = "0";
+                btnDelete.Enabled = false;
+
+            }
+            else
+            {
+                sql = "update ChiTietGioHang set SoLuong = "
+                    + lblQty.Text
+                    + "where MaSP = '" + id + "'"
+                    + " and MaGH = '" + idGH + "'";
+                function.RunNonQuery(sql);
+                dataGridView1.CurrentRow.Cells["SoLuong"].Value = lblQty.Text;
+                sql = "update SanPham set SoLuong = SoLuong + " + 1
+                       + "where MaSP = '" + id + "'";
+                function.RunNonQuery(sql);
+            }
+            setShipFee();
+            setTotal();
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
+            string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
+            int currentQty = int.Parse(dataGridView1.CurrentRow.Cells["SoLuong"]
+                             .Value.ToString());
+            string idGH = function.RunQuery(sql);
+
+            if ((int.Parse(lblQty.Text) + 1) > max)
+                return;
+            else
+            {
+                lblQty.Text = (int.Parse(lblQty.Text) + 1).ToString();
+
+                sql = "update ChiTietGioHang set SoLuong = "
+                    + lblQty.Text
+                    + "where MaSP = '" + id + "'"
+                    + " and MaGH = '" + idGH + "'";
+                function.RunNonQuery(sql);
+                dataGridView1.CurrentRow.Cells["SoLuong"].Value = lblQty.Text;
+                sql = "update SanPham set SoLuong = SoLuong - " + 1
+                       + "where MaSP = '" + id + "'";
+                function.RunNonQuery(sql);
+            }
+            setShipFee();
+            setTotal();
         }
     }
 }

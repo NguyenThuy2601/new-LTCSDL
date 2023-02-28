@@ -168,6 +168,7 @@ namespace PetShop
             btSua.Enabled = true;
             btXoa.Enabled = true;
             numSoLuongSP.Value = 0;
+            LoadDataGridView();
         }
         public QLSanPham()
         {
@@ -429,6 +430,21 @@ namespace PetShop
         private void btnDelKW_Click(object sender, EventArgs e)
         {
             txtKwInfo.Text = "";
+            listBoxKW.SelectedItems.Clear();
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = tblCL;
+            dt.DefaultView.RowFilter = string.Format("MaSP = '{0}'", txtFindCode.Text);
+            dgwListSP.DataSource = dt;
+        }
+
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+            DataTable dt = tblCL;
+            dt.DefaultView.RowFilter = string.Format("TenSp like '%{0}%'", txtFindName.Text);
+            dgwListSP.DataSource = dt;
         }
     }
 }

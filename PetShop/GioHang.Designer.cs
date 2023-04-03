@@ -40,9 +40,9 @@
             this.btnDelete = new PetShop.buttonCustom();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblShip = new System.Windows.Forms.Label();
-            this.btnUp = new PetShop.buttonCustom();
-            this.btnDown = new PetShop.buttonCustom();
-            this.lblQty = new System.Windows.Forms.Label();
+            this.lblQty2 = new System.Windows.Forms.Label();
+            this.buttonCustom1 = new PetShop.buttonCustom();
+            this.buttonCustom2 = new PetShop.buttonCustom();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -186,65 +186,66 @@
             this.lblShip.TabIndex = 11;
             this.lblShip.Text = "0";
             // 
-            // btnUp
+            // lblQty2
             // 
-            this.btnUp.BackColor = System.Drawing.Color.GhostWhite;
-            this.btnUp.BackgroundColor = System.Drawing.Color.GhostWhite;
-            this.btnUp.BorderColor = System.Drawing.Color.Indigo;
-            this.btnUp.BorderRadius = 40;
-            this.btnUp.BorderSize = 2;
-            this.btnUp.FlatAppearance.BorderSize = 0;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.ForeColor = System.Drawing.Color.Indigo;
-            this.btnUp.Location = new System.Drawing.Point(630, 305);
-            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(44, 41);
-            this.btnUp.TabIndex = 12;
-            this.btnUp.Text = "+";
-            this.btnUp.TextColor = System.Drawing.Color.Indigo;
-            this.btnUp.UseVisualStyleBackColor = false;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.lblQty2.AutoSize = true;
+            this.lblQty2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblQty2.Location = new System.Drawing.Point(546, 334);
+            this.lblQty2.Name = "lblQty2";
+            this.lblQty2.Size = new System.Drawing.Size(22, 25);
+            this.lblQty2.TabIndex = 12;
+            this.lblQty2.Text = "0";
             // 
-            // btnDown
+            // buttonCustom1
             // 
-            this.btnDown.BackColor = System.Drawing.Color.GhostWhite;
-            this.btnDown.BackgroundColor = System.Drawing.Color.GhostWhite;
-            this.btnDown.BorderColor = System.Drawing.Color.Indigo;
-            this.btnDown.BorderRadius = 40;
-            this.btnDown.BorderSize = 2;
-            this.btnDown.FlatAppearance.BorderSize = 0;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.ForeColor = System.Drawing.Color.Indigo;
-            this.btnDown.Location = new System.Drawing.Point(630, 350);
-            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(44, 38);
-            this.btnDown.TabIndex = 13;
-            this.btnDown.Text = "-";
-            this.btnDown.TextColor = System.Drawing.Color.Indigo;
-            this.btnDown.UseVisualStyleBackColor = false;
-            this.btnDown.Click += new System.EventHandler(this.buttonCustom2_Click);
+            this.buttonCustom1.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonCustom1.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.buttonCustom1.BorderColor = System.Drawing.Color.Indigo;
+            this.buttonCustom1.BorderRadius = 40;
+            this.buttonCustom1.BorderSize = 2;
+            this.buttonCustom1.FlatAppearance.BorderSize = 0;
+            this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.buttonCustom1.ForeColor = System.Drawing.Color.Indigo;
+            this.buttonCustom1.Location = new System.Drawing.Point(587, 315);
+            this.buttonCustom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCustom1.Name = "buttonCustom1";
+            this.buttonCustom1.Size = new System.Drawing.Size(45, 34);
+            this.buttonCustom1.TabIndex = 13;
+            this.buttonCustom1.Text = "+";
+            this.buttonCustom1.TextColor = System.Drawing.Color.Indigo;
+            this.buttonCustom1.UseVisualStyleBackColor = false;
+            this.buttonCustom1.Click += new System.EventHandler(this.btnUp_Click);
             // 
-            // lblQty
+            // buttonCustom2
             // 
-            this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblQty.Location = new System.Drawing.Point(537, 334);
-            this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(0, 25);
-            this.lblQty.TabIndex = 14;
+            this.buttonCustom2.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonCustom2.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.buttonCustom2.BorderColor = System.Drawing.Color.Indigo;
+            this.buttonCustom2.BorderRadius = 40;
+            this.buttonCustom2.BorderSize = 2;
+            this.buttonCustom2.FlatAppearance.BorderSize = 0;
+            this.buttonCustom2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustom2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.buttonCustom2.ForeColor = System.Drawing.Color.Indigo;
+            this.buttonCustom2.Location = new System.Drawing.Point(587, 353);
+            this.buttonCustom2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCustom2.Name = "buttonCustom2";
+            this.buttonCustom2.Size = new System.Drawing.Size(45, 33);
+            this.buttonCustom2.TabIndex = 14;
+            this.buttonCustom2.Text = "-";
+            this.buttonCustom2.TextColor = System.Drawing.Color.Indigo;
+            this.buttonCustom2.UseVisualStyleBackColor = false;
+            this.buttonCustom2.Click += new System.EventHandler(this.buttonCustom2_Click);
             // 
             // GioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 522);
-            this.Controls.Add(this.lblQty);
-            this.Controls.Add(this.btnDown);
-            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.buttonCustom2);
+            this.Controls.Add(this.buttonCustom1);
+            this.Controls.Add(this.lblQty2);
             this.Controls.Add(this.lblShip);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnDelete);
@@ -281,8 +282,9 @@
         private buttonCustom btnDelete;
         private Label lblTotal;
         private Label lblShip;
-        private buttonCustom btnUp;
-        private buttonCustom btnDown;
-        private Label lblQty;
+        
+        private Label lblQty2;
+        private buttonCustom buttonCustom1;
+        private buttonCustom buttonCustom2;
     }
 }

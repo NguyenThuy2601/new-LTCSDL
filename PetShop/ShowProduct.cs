@@ -7,28 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop.BUS;
+using PetShop.DTO;
 
 namespace PetShop
 {
     public partial class ShowProduct : Form
     {
+
+        ShowProductBUS bus;
+        PetShop.DTO.User user;
+
         public ShowProduct()
         {
             InitializeComponent();
         }
 
-       
+        public ShowProduct(PetShop.DTO.User user) : this()
+        {
+            this.user = user;
+        }
 
+        
+    
         private void ShowProduct_Load(object sender, EventArgs e)
         {
-            function.Connect();
+            bus = new ShowProductBUS();
+            DataTable dt = null;
+            dt = bus.load();
             int x = 0, y = 0;
-            string sql = "select top 10 s.*, km.PhanTram " +
-                  "from SanPham  as s " +
-                  "left join KhuyenMai as km"
-                    + " on s.MaKM = km.MaKM";
-            DataTable dt = function.GetDataToTable(sql);
-            foreach(DataRow row in dt.Rows)
+            foreach (DataRow row in dt.Rows)
             {
                 string id = row["MaSP"].ToString();
                 string pName = row["TenSp"].ToString();
@@ -47,8 +55,7 @@ namespace PetShop
                     double price = (double.Parse(giaBan) - (double.Parse(giaBan) * percent));
                     giaBan = price.ToString();
                 }
-                SanPham obj = new SanPham(id, pName, giaBan, soLuong, color, phantram, pic);
-                //SanPham obj = new SanPham();
+                SanPham obj = new SanPham(id, pName, giaBan, soLuong, color, phantram, pic, user);
                 obj.TopLevel = false;
                 obj.Dock = DockStyle.Fill;
                 tableLayoutPanel1.Controls.Add(obj);
@@ -59,12 +66,12 @@ namespace PetShop
                     y = 1;
                     x++;
                 }
-            }    
+            }
         }
 
         private void ShowProduct_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+            int signal = bus.close();
         }
     }
 }

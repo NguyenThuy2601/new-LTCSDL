@@ -7,19 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop.DTO;
+using PetShop.DAO;
+using PetShop.BUS;
 
 namespace PetShop
 {
     public partial class SanPham : Form
     {
+        SanPhamBUS bus = null;
+        DTO.User user = new DTO.User();
         public SanPham()
         {
             InitializeComponent();
         }
-
-        public SanPham(string id, string pName, string price, string qty, string color, string maKM, string picLink)
+        public SanPham(string id, string pName, string price, string qty, string color, string maKM, string picLink, PetShop.DTO.User user)
         {
+           
             InitializeComponent();
+            this.user = user;
             ID = id;
             setPName(pName);
             setPrice(price);
@@ -37,7 +43,12 @@ namespace PetShop
                 lblDiscount.Visible = false;
             }
             numericUpDown1.Maximum = int.Parse(qty);
-            
+
+            if (user.getID() == 0)
+                btnAddToCart.Visible = false;
+            else
+                btnAddToCart.Visible = true;
+
         }
         public string ID { get; set; }
         public void setPName(string value) 
@@ -82,64 +93,38 @@ namespace PetShop
         }
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            bus = new SanPhamBUS();
+            bus.load();
             int price = getPrice();
             int total = price * int.Parse(numericUpDown1.Value.ToString());
-            int recentQty = 0;
-            int remainQty = this.getSoLuong() - int.Parse(numericUpDown1.Value.ToString());
+            int flag = 0;
 
-            MessageBox.Show(total.ToString());
 
             //lay id gio hang
-            string sql = "select MaGH from GioHang where MaKH = '" + User.getID() + "'";
-            string GHid = function.RunQuery(sql);
+            string cartID = bus.getCartID(user.getID().ToString());
+ 
 
             //them moi vao chi tiet gio hang
-            sql = "select MaSP from ChiTietGioHang where MaGH = '"
-                    + GHid + "' and MaSP = '" + this.ID + "'";
-            if (function.RunQuery(sql) == null)
-            {
-                sql = "insert into ChiTietGioHang values('"
-                + GHid + "','"
-                + this.ID + "',"
-                + numericUpDown1.Value + ",'"
-                + total + "')";
 
-                function.RunNonQuery(sql);
-            }
+            if (!bus.checkProductInCart(cartID, this.ID))
+                flag = bus.addToCart(cartID, this.ID, numericUpDown1.Value, total);
             else
-            {
-                string idSP = function.RunQuery(sql);
-                sql = "update ChiTietGioHang set SoLuong = SoLuong +"
-                + numericUpDown1.Value + ", TamTinh = TamTinh +"
-                + total
-                + "where MaSP ='" + this.ID + "' and MaGH = '" + GHid + "'";
-                function.RunNonQuery(sql);
-            }
-
-            //cap nhap so luong mon hang trong gio
-            sql = "select SoLuong from GioHang where MaGH = '" + GHid + "'";
-            recentQty = int.Parse(function.RunQuery(sql));
-            recentQty = recentQty + int.Parse(numericUpDown1.Value.ToString());
-            sql = "update GioHang set SoLuong ="
-                + recentQty
-                + " where MaGH = '" + GHid + "'";
-            function.RunNonQuery(sql);
-
-            //cap nhap so luong hang ton
-            sql = "update SanPham set SoLuong = " + remainQty + "where MaSP = '" + this.ID + "'";
-            function.RunNonQuery(sql);
-
-            //reset giao dien 
-            lbTonKho.Text = remainQty.ToString();
+                flag  = bus.updateProdcutQtyInCart(cartID, this.ID, numericUpDown1.Value, total);
+            MessageBox.Show(flag.ToString());
+            if (flag != 0)
+                MessageBox.Show("Thêm vào giỏ hàng thành công");
+            else
+                MessageBox.Show("Đã có lỗi xảy ra");
+            bus.close();
             numericUpDown1.Value = 0;
         }
 
         private void SanPham_VisibleChanged(object sender, EventArgs e)
         {
-            if (User.getID() == 0)
-                btnAddToCart.Visible = false;
-            else
-                btnAddToCart.Visible = true;
+            //if (user.getID() == 0)
+            //    btnAddToCart.Visible = false;
+            //else
+            //    btnAddToCart.Visible = true;
         }
     }
 }

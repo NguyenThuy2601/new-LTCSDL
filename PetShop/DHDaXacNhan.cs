@@ -13,7 +13,7 @@ namespace PetShop
     public partial class frmDonHangDaXN : Form
     {
         DataTable tb, tb1;
-        public xc()
+        public frmDonHangDaXN()
         {
             InitializeComponent();
         }

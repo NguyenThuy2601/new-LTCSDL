@@ -107,6 +107,7 @@
             this.pnTTDonHang.Name = "pnTTDonHang";
             this.pnTTDonHang.Size = new System.Drawing.Size(1182, 172);
             this.pnTTDonHang.TabIndex = 3;
+            this.pnTTDonHang.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTTDonHang_Paint);
             // 
             // panel1
             // 

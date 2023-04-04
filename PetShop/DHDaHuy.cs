@@ -37,5 +37,10 @@ namespace PetShop
             dt.DefaultView.RowFilter = string.Format("MaDH = '{0}'", txtMaDH.Text);
             dgvListDH.DataSource = dt;
         }
+
+        private void pnTTDonHang_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

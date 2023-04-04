@@ -107,7 +107,7 @@ namespace BanHangChoPet
 
         private void btKhachHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new QLKhachHang());
+            openChildForm(new QLKH());
             hideSubMenu();
         }
 

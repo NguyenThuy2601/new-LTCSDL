@@ -1,6 +1,6 @@
 ﻿namespace PetShop
 {
-    partial class QLKhachHang
+    partial class QLKH
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             // 
             // btSua
             // 
-            this.btSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btSua.Location = new System.Drawing.Point(312, 196);
@@ -349,7 +349,7 @@
             // 
             // btnTimKiemKH
             // 
-            this.btnTimKiemKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnTimKiemKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnTimKiemKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnTimKiemKH.Location = new System.Drawing.Point(820, 196);

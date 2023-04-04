@@ -20,6 +20,7 @@ namespace PetShop.DAO
             {
                 Con = new SqlConnection();
                 Con.ConnectionString = @"Data Source=DESKTOP-4CBR9B5;Initial Catalog=PetShop;Integrated Security=True";
+                //Con.ConnectionString = @"Data Source = KIMTAI; Initial Catalog = PetShop; Integrated Security = True";
                 Con.Open();
                 if (Con.State == ConnectionState.Open)
                     return 1;

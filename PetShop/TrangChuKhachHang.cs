@@ -8,16 +8,23 @@ using System.Text;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop.DTO;
 
 namespace PetShop
 {
     public partial class TrangChuKhachHang : Form
     {
+        PetShop.DTO.User user;
         public TrangChuKhachHang()
         {
             InitializeComponent();
+            user = new PetShop.DTO.User();
         }
 
+        public TrangChuKhachHang(PetShop.DTO.User user) : this()
+        {
+            this.user = user;
+        }
 
         private void TrangChuKhachHang_Load(object sender, EventArgs e)
         {
@@ -50,7 +57,7 @@ namespace PetShop
         }
         private void btnGioHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new GioHang());
+            openChildForm(new GioHang(this.user));
         }
 
         private void TrangChuKhachHang_FormClosed(object sender, FormClosedEventArgs e)
@@ -65,7 +72,7 @@ namespace PetShop
 
         private void TrangChuKhachHang_Activated(object sender, EventArgs e)
         {
-            if (User.getID() != 0)
+            if (user.getID() != 0)
             {
                 btnDangNhap.Visible = false;
                 btnDangXuat.Visible = true;
@@ -83,7 +90,8 @@ namespace PetShop
 
         private void btnDanhMucCho_Click(object sender, EventArgs e)
         {
-            openChildForm(new ShowProduct()); 
+            
+            openChildForm(new ShowProduct(user));
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

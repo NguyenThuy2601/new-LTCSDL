@@ -43,12 +43,14 @@ namespace PetShop
         private void LoadDataGridView()
         {
             string sql;
-            sql = "select s.*, STRING_AGG(trim(MaKW), ',') as KW " +
-                  "from SanPham  as s " +
-                  "left join SP_KW as sk"
-                    + " on s.MaSP = sk.MaSP"
-                +" group by s.MaSP, s.TenSp, s.GiaBan, s.GiaNhap, " +
-                "s.Hinh, s.MaKM, s.MauSac, s.SoLuong, s.TinhTrang";
+            //sql = "select s.*, STRING_AGG(trim(MaKW), ',') as KW " +
+            //      "from SanPham  as s " +
+            //      "left join SP_KW as sk"
+            //        + " on s.MaSP = sk.MaSP"
+            //    +" group by s.MaSP, s.TenSp, s.GiaBan, s.GiaNhap, " +
+            //    "s.Hinh, s.MaKM, s.MauSac, s.SoLuong, s.TinhTrang";
+
+            sql = "select nv.*, tk.email from NhanVien nv, TaiKhoan tk where nv.MaTK = tk.MaTK";
 
             tblCL = function.GetDataToTable(sql);
             dgwListSP.DataSource = tblCL;
@@ -168,6 +170,7 @@ namespace PetShop
             btSua.Enabled = true;
             btXoa.Enabled = true;
             numSoLuongSP.Value = 0;
+            LoadDataGridView();
         }
         public QLSanPham()
         {
@@ -429,6 +432,21 @@ namespace PetShop
         private void btnDelKW_Click(object sender, EventArgs e)
         {
             txtKwInfo.Text = "";
+            listBoxKW.SelectedItems.Clear();
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = tblCL;
+            dt.DefaultView.RowFilter = string.Format("MaSP = '{0}'", txtFindCode.Text);
+            dgwListSP.DataSource = dt;
+        }
+
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+            DataTable dt = tblCL;
+            dt.DefaultView.RowFilter = string.Format("TenSp like '%{0}%'", txtFindName.Text);
+            dgwListSP.DataSource = dt;
         }
     }
 }

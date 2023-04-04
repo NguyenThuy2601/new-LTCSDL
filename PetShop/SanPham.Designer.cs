@@ -47,25 +47,25 @@
             this.picSP.Location = new System.Drawing.Point(72, 11);
             this.picSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picSP.Name = "picSP";
-            this.picSP.Size = new System.Drawing.Size(270, 137);
+            this.picSP.Size = new System.Drawing.Size(336, 137);
             this.picSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSP.TabIndex = 0;
             this.picSP.TabStop = false;
             // 
             // lbTenSp
             // 
-            this.lbTenSp.AutoSize = true;
-            this.lbTenSp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbTenSp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbTenSp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTenSp.Location = new System.Drawing.Point(70, 167);
+            this.lbTenSp.Location = new System.Drawing.Point(72, 163);
             this.lbTenSp.Name = "lbTenSp";
-            this.lbTenSp.Size = new System.Drawing.Size(2, 18);
+            this.lbTenSp.Size = new System.Drawing.Size(336, 37);
             this.lbTenSp.TabIndex = 2;
+            this.lbTenSp.Text = "hh";
             this.lbTenSp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbGiaTien
             // 
-            this.lbGiaTien.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbGiaTien.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbGiaTien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbGiaTien.Location = new System.Drawing.Point(138, 214);
             this.lbGiaTien.Name = "lbGiaTien";
@@ -87,7 +87,7 @@
             // 
             // lbTonKho
             // 
-            this.lbTonKho.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbTonKho.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbTonKho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbTonKho.Location = new System.Drawing.Point(150, 298);
             this.lbTonKho.Name = "lbTonKho";
@@ -97,7 +97,7 @@
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Location = new System.Drawing.Point(252, 343);
+            this.btnAddToCart.Location = new System.Drawing.Point(318, 330);
             this.btnAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(90, 49);
@@ -108,7 +108,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(81, 303);
+            this.label2.Location = new System.Drawing.Point(69, 298);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 39);
             this.label2.TabIndex = 9;
@@ -117,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 260);
+            this.label4.Location = new System.Drawing.Point(69, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 16);
             this.label4.TabIndex = 10;
@@ -125,7 +125,7 @@
             // 
             // lblColor
             // 
-            this.lblColor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblColor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblColor.Location = new System.Drawing.Point(150, 255);
             this.lblColor.Name = "lblColor";
@@ -135,7 +135,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 357);
+            this.numericUpDown1.Location = new System.Drawing.Point(150, 357);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(72, 22);
@@ -145,8 +145,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(374, 410);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(440, 410);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.label4);

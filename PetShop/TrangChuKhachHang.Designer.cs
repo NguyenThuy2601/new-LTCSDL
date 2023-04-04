@@ -49,9 +49,21 @@
             this.bátĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phụKiệnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vệSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drdMenuMeo = new PetShop.dropdownMenu(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.drdMenuCho.SuspendLayout();
+            this.drdMenuMeo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -291,6 +303,90 @@
             this.vệSinhToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.vệSinhToolStripMenuItem.Text = "Vệ Sinh";
             // 
+            // drdMenuMeo
+            // 
+            this.drdMenuMeo.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.drdMenuMeo.IsMainMenu = false;
+            this.drdMenuMeo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem9,
+            this.toolStripMenuItem10});
+            this.drdMenuMeo.MenuItemHeight = 30;
+            this.drdMenuMeo.MenuItemTextColor = System.Drawing.Color.Turquoise;
+            this.drdMenuMeo.Name = "drdMenuCho";
+            this.drdMenuMeo.PrimaryColor = System.Drawing.Color.Indigo;
+            this.drdMenuMeo.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.drdMenuMeo.Size = new System.Drawing.Size(141, 100);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 24);
+            this.toolStripMenuItem1.Text = "Thức Ăn";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 26);
+            this.toolStripMenuItem2.Text = "Thức ăn ướt";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(172, 26);
+            this.toolStripMenuItem3.Text = "Thức ăn khô";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8});
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(140, 24);
+            this.toolStripMenuItem4.Text = "Vật Dụng";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(143, 26);
+            this.toolStripMenuItem5.Text = "Lược";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(143, 26);
+            this.toolStripMenuItem6.Text = "Chuồng";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(143, 26);
+            this.toolStripMenuItem7.Text = "Nệm";
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(143, 26);
+            this.toolStripMenuItem8.Text = "Bát ăn";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(140, 24);
+            this.toolStripMenuItem9.Text = "Phụ Kiện";
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(140, 24);
+            this.toolStripMenuItem10.Text = "Vệ Sinh";
+            // 
             // TrangChuKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +403,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.drdMenuCho.ResumeLayout(false);
+            this.drdMenuMeo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -333,5 +430,16 @@
         private ToolStripMenuItem bátĂnToolStripMenuItem;
         private ToolStripMenuItem phụKiệnToolStripMenuItem;
         private ToolStripMenuItem vệSinhToolStripMenuItem;
+        private dropdownMenu drdMenuMeo;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuItem4;
+        private ToolStripMenuItem toolStripMenuItem5;
+        private ToolStripMenuItem toolStripMenuItem6;
+        private ToolStripMenuItem toolStripMenuItem7;
+        private ToolStripMenuItem toolStripMenuItem8;
+        private ToolStripMenuItem toolStripMenuItem9;
+        private ToolStripMenuItem toolStripMenuItem10;
     }
 }

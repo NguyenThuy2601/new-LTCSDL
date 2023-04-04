@@ -31,6 +31,7 @@ namespace PetShop
             function.Connect();
             pictureBox1.LoadAsync(@"https://res.cloudinary.com/drrmia1ij/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1677065950/Capture-removebg_k3mb53.jpg");
             drdMenuCho.IsMainMenu = true;
+            drdMenuMeo.IsMainMenu = true;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace PetShop
 
         private void btnDanhMucMeo_Click(object sender, EventArgs e)
         {
-            drdMenuCho.Show(btnDanhMucMeo, btnDanhMucMeo.Width, 0);
+            drdMenuMeo.Show(btnDanhMucMeo, btnDanhMucMeo.Width, 0);
         }
     }
 }

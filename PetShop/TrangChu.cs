@@ -45,15 +45,17 @@ namespace BanHangChoPet
             hideSubMenu();
         }
 
-        private void btDHDaXacNhan_Click(object sender, EventArgs e)
+        private void BtDHDaXacNhan_Click(object sender, EventArgs e)
         {
             //code
+            openChildForm(new frmDonHangDaXN());
             hideSubMenu();
         }
 
         private void btDHDaHuy_Click(object sender, EventArgs e)
         {
             //code
+            openChildForm(new frmDHDaHuy());
             hideSubMenu();
         }
         #endregion
@@ -106,6 +108,12 @@ namespace BanHangChoPet
         private void btKhachHang_Click(object sender, EventArgs e)
         {
             openChildForm(new QLKhachHang());
+            hideSubMenu();
+        }
+
+        private void btDoanhThu_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DoanhThu());
             hideSubMenu();
         }
     }

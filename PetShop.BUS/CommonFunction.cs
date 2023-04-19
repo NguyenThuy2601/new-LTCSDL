@@ -18,5 +18,7 @@ namespace PetShop.BUS
                 return Convert.ToBase64String(data);
             }
         }
+
+        
     }
 }

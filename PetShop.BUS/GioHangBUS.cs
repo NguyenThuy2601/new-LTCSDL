@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace PetShop.BUS
 {
-    public class GioHangBUS
+    public class GioHangBUS :ModelBUS
     {
 
-        SQLfunction sQLfunction = null;
-        public void load()
-        {
-            sQLfunction = new SQLfunction();
-            sQLfunction.Connect();
-        }
+        //SQLfunction sQLfunction = null;
+        //public void load()
+        //{
+        //    sQLfunction = new SQLfunction();
+        //    sQLfunction.Connect();
+        //}
         public DataTable getCart(string uID)
         {
             string sql = "select ct.MaSP ,sp.TenSp, ct.SoLuong, ct.TamTinh from GioHang gh, ChiTietGioHang ct, SanPham sp"
@@ -24,29 +24,27 @@ namespace PetShop.BUS
                        + uID + "'";
             return sQLfunction.GetDataToTable(sql);
         }
-        public string getCartId(string uID)
+        public string getCartId(int uID)
         {
             string sql = "select MaGH from GioHang where MaKH = '" + uID + "'";
             return sQLfunction.RunQuery(sql);
         }
-        public int getCartQty(string uID)
-        {
-            string sql = "select SoLuong from GioHang where MaKH = '" + uID + "'";
-            return int.Parse(sQLfunction.RunQuery(sql));
-        }
-
-        public int updateCartQty(String cID, String pID)
-        {
-            return 0;
-        }
+             
         public int getTamTinh(string uID)
         {
             string sql = "select sum(TamTinh) from GioHang gh, ChiTietGioHang ct"
                            + " where gh.MaGH = ct.MaGH and gh.MaKH = " + uID  ;
-            if (sQLfunction.RunQuery(sql) != null)
-                return int.Parse(sQLfunction.RunQuery(sql));
-            else
-                return 0;
+            if (sQLfunction.RunQuery(sql) != null || sQLfunction.RunQuery(sql) != "")
+                try
+                {
+                    int.Parse(sQLfunction.RunQuery(sql));
+                    return int.Parse(sQLfunction.RunQuery(sql));
+                }
+                catch
+                {
+                    return 0;
+                }
+            return 0;
         }
         public int getRemainQty(string pID)
         {
@@ -64,13 +62,14 @@ namespace PetShop.BUS
         {
             String sql = "update ChiTietGioHang set SoLuong = "
                         + Qty
-                        + "where MaSP = '" + idSP + "'"
+                        + " where MaSP = '" + idSP + "'"
                         + " and MaGH = '" + idGH + "'"; 
             return sQLfunction.RunNonQuery(sql);
         }
-        public void close()
-        {
-            sQLfunction.Disconnect();
-        }
+       
+        //public void close()
+        //{
+        //    sQLfunction.Disconnect();
+        //}
     }
 }

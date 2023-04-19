@@ -9,14 +9,14 @@ using PetShop.DAO;
 
 namespace PetShop.BUS
 {
-    public class DangNhapBUS
+    public class DangNhapBUS :ModelBUS
     {
-        SQLfunction sQLfunction = null;
-        public void load()
-        {
-            sQLfunction = new SQLfunction();
-            sQLfunction.Connect();
-        }
+        //SQLfunction sQLfunction = null;
+        //public void load()
+        //{
+        //    sQLfunction = new SQLfunction();
+        //    sQLfunction.Connect();
+        //}
         public string getPass(string email)
         {
             string sql = "select password from TaiKhoan where email ='" + email + "'";
@@ -41,9 +41,15 @@ namespace PetShop.BUS
             string sql = "select MaKH, Ten from KhachHang where MaTK ='" + accID + "'";
             return sQLfunction.GetDataToTable(sql);
         }
-        public void close()
+
+        public DataTable getEmplByAccID(string accID)
         {
-            sQLfunction.Disconnect();
+            string sql = "select MaNV, Ten from NhanVien where MaTK ='" + accID + "'";
+            return sQLfunction.GetDataToTable(sql);
         }
+        //public void close()
+        //{
+        //    sQLfunction.Disconnect();
+        //}
     }
 }

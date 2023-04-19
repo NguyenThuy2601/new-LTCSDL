@@ -44,10 +44,22 @@
     <Compile Include="CommonFunction.cs" />
     <Compile Include="DangKyBUS.cs" />
     <Compile Include="DangNhapBUS.cs" />
+    <Compile Include="DHDaHuyBUS.cs" />
+    <Compile Include="DHDaXacNhanBUS.cs" />
+    <Compile Include="DHDoiXacNhanBUS.cs" />
     <Compile Include="GioHangBUS.cs" />
+    <Compile Include="KhuyenMaiBUS.cs" />
+    <Compile Include="ModelBUS.cs" />
+    <Compile Include="QLKHBUS.cs" />
+    <Compile Include="QLNVBUS.cs" />
+    <Compile Include="QLSPBus.cs" />
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="ShowProductBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongKeBUS.cs" />
+    <Compile Include="UserProfileBUS.cs" />
+    <Compile Include="XacNhanDHBUS.cs" />
+    <Compile Include="XemChiTietDHBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PetShop.DAO\PetShop.DAO.csproj">

@@ -15,43 +15,36 @@ namespace PetShop
     {
         GioHangBUS bus = new GioHangBUS();
         DTO.User user = null;
+        string idGH = null;
+        TrangChuKhachHang mainf = null;
+        DataTable dt = null;
+        double PhanTramShip = 0.2; 
         public GioHang()
         {
             InitializeComponent();
         }
 
-        public GioHang(DTO.User user) : this()
+        public GioHang(DTO.User user, TrangChuKhachHang mainf) : this()
         {
             bus = new GioHangBUS();
             bus.load();
             this.user = user;
+            idGH = bus.getCartId(user.getID());
+            this.mainf = mainf;
         }
 
         private void LoadDataGridView()
         {
-            
-            dataGridView1.DataSource = bus.getCart(user.getID().ToString());
+            dt = bus.getCart(user.getID().ToString());
+            dataGridView1.DataSource = dt;
         }
-        //private int getProductQtyInCart()
-        //{
-        //    string sql = "select SoLuong from GioHang where MaKH = '" + User.getID() + "'";
-        //    return int.Parse(function.RunQuery(sql));
-        //}
-        //private int Total()
-        //{
-        //    int total = 0;
-        //    if (bus.getCartQty(User.getID().ToString()) > 0)
-        //        foreach (DataGridViewRow row in dataGridView1.Rows)
-        //            if(row.Cells["TamTinh"].Value != null)
-        //                total += int.Parse(row.Cells["TamTinh"].Value.ToString());
-        //    return total;
-        //}
+
         private void setShipFee()
         {
             if (bus.getTamTinh(user.getID().ToString()) > 500000)
                 lblShip.Text = "0";
             else
-                lblShip.Text = (bus.getTamTinh(user.getID().ToString()) * 0.2).ToString();
+                lblShip.Text = (bus.getTamTinh(user.getID().ToString()) * PhanTramShip).ToString();
         }
         private void setTotal()
         {
@@ -61,8 +54,9 @@ namespace PetShop
         {
             this.LoadDataGridView();
             btnDelete.Enabled = false;
+          
             setShipFee();
-            //setTotal();
+            setTotal();
         }
         int max = 0;
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -71,8 +65,6 @@ namespace PetShop
             lblName.Text = dataGridView1.CurrentRow.Cells["TenSp"].Value.ToString();
             lblQty2.Text = dataGridView1.CurrentRow.Cells["SoLuong"].Value.ToString();
             btnDelete.Enabled = true;
-            //string sql = "select SoLuong from SanPham where MaSP = '" 
-            //            + dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString() + "'";
             max = bus.getRemainQty(dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString());
         }
 
@@ -82,18 +74,7 @@ namespace PetShop
         {
             string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
 
-            string idGH = bus.getCartId(User.getID().ToString());
-
-            //sql = "select count(MaSP) from ChiTietGioHang where MaGH = '" + idGH + "'";
-            //int totalQty = int.Parse(function.RunQuery(sql));
-
-
-
-
-            //sql = "update GioHang set GioHang.SoLuong = " + (totalQty - 1)
-            //       + " where MaGH = '" + idGH + "'";
-            //function.RunNonQuery(sql);
-
+            
 
             bus.deleteItem(id, idGH);
             lblName.Text = "";
@@ -107,18 +88,12 @@ namespace PetShop
         private void buttonCustom2_Click(object sender, EventArgs e)
         {
             string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
-            string idGH = bus.getCartId(user.getID().ToString());
 
             lblQty2.Text = (int.Parse(lblQty2.Text) - 1).ToString();
 
             if (lblQty2.Text == "0")
             {
-                //sql = "DELETE ChiTietGioHang WHERE MaSP = '" + id + "'"
-                //     + " and MaGH = '" + idGH + "'";
-                //function.RunNonQuery(sql);
-                //sql = "update SanPham set SoLuong = SoLuong + " + currentQty
-                //        + "where MaSP = '" + id + "'";
-                //function.RunNonQuery(sql);
+                
                 bus.deleteItem(id, idGH);
                 lblName.Text = "";
                 lblQty2.Text = "0";
@@ -137,22 +112,40 @@ namespace PetShop
         private void btnUp_Click(object sender, EventArgs e)
         {
             string id = dataGridView1.CurrentRow.Cells["MaSP"].Value.ToString();
-            string idGH = bus.getCartId(User.getID().ToString());
 
             if ((int.Parse(lblQty2.Text) + 1) > max)
                 return;
             else
             {
                 lblQty2.Text = (int.Parse(lblQty2.Text) + 1).ToString();
-
                 bus.updateItemQty(id, idGH, lblQty2.Text);
-                //dataGridView1.CurrentRow.Cells["SoLuong"].Value = lblQty.Text;
             }
             this.LoadDataGridView();
             setShipFee();
             setTotal();
         }
 
-       
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (dt.Rows.Count >= 1)
+            {
+                int sl = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    sl = bus.getRemainQty(row["MaSP"].ToString());
+                    if (sl < int.Parse(row["SoLuong"].ToString()))
+                    {
+                        MessageBox.Show("Sản phẩm " + row["TenSp"].ToString()
+                            + " số lượng trong kho không đủ đáp ứng");
+                        return;
+                    }
+                }
+                mainf.openChildForm(new XacNhanDH(user, idGH, lblShip.Text, lblTotal.Text, PhanTramShip, mainf));
+                bus.close();
+            }
+            else
+                return;
+           
+        }
     }
 }

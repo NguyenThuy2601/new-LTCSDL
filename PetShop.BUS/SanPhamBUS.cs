@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace PetShop.BUS
 {
-    public class SanPhamBUS
+    public class SanPhamBUS :ModelBUS
     {
-        SQLfunction sQLfunction = null;
-        public void load()
-        {
-            sQLfunction = new SQLfunction();
-            sQLfunction.Connect();
-        }
+        //SQLfunction sQLfunction = null;
+        //public void load()
+        //{
+        //    sQLfunction = new SQLfunction();
+        //    sQLfunction.Connect();
+        //}
         public string getCartID(string MaKH)
         {
             string sql = "select MaGH from GioHang where MaKH = '" + MaKH + "'";
@@ -52,9 +52,9 @@ namespace PetShop.BUS
             return sQLfunction.RunNonQuery(sql);
         }
 
-        public void close()
-        {
-            sQLfunction.Disconnect();
-        }
+        //public void close()
+        //{
+        //    sQLfunction.Disconnect();
+        //}
     }
 }

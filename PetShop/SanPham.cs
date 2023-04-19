@@ -17,6 +17,8 @@ namespace PetShop
     {
         SanPhamBUS bus = null;
         DTO.User user = new DTO.User();
+
+
         public SanPham()
         {
             InitializeComponent();
@@ -50,6 +52,10 @@ namespace PetShop
                 btnAddToCart.Visible = true;
 
         }
+
+       
+
+
         public string ID { get; set; }
         public void setPName(string value) 
         {  
@@ -57,8 +63,7 @@ namespace PetShop
         }
         public void setPrice(string value)
         {
-            double p = double.Parse(value) * 1000;
-            lbGiaTien.Text = p.ToString()  + " VND";
+            lbGiaTien.Text = value + " VND";
         }
         public void setKmai(string value)
         {
@@ -110,7 +115,7 @@ namespace PetShop
                 flag = bus.addToCart(cartID, this.ID, numericUpDown1.Value, total);
             else
                 flag  = bus.updateProdcutQtyInCart(cartID, this.ID, numericUpDown1.Value, total);
-            MessageBox.Show(flag.ToString());
+            
             if (flag != 0)
                 MessageBox.Show("Thêm vào giỏ hàng thành công");
             else

@@ -209,9 +209,11 @@
             this.dgvListDH.Name = "dgvListDH";
             this.dgvListDH.RowHeadersWidth = 51;
             this.dgvListDH.RowTemplate.Height = 24;
+            this.dgvListDH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListDH.Size = new System.Drawing.Size(1125, 200);
             this.dgvListDH.TabIndex = 1;
             this.dgvListDH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListDH_CellMouseClick);
+
             // 
             // frmDonHangDaXN
             // 
@@ -222,6 +224,7 @@
             this.Controls.Add(this.pnTTDonHang);
             this.Name = "frmDonHangDaXN";
             this.Text = "ĐƠN HÀNG ĐÃ XÁC NHẬN";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDonHangDaXN_FormClosed);
             this.Load += new System.EventHandler(this.frmDonHangDaXN_Load);
             this.gbTimMaDH.ResumeLayout(false);
             this.gbTimMaDH.PerformLayout();

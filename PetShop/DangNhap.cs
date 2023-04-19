@@ -75,23 +75,29 @@ namespace PetShop
                                 int uID;
                                 string uName;
                                 DataTable dt = bus.getKHByAccID(accID);
-                                foreach(DataRow row in dt.Rows)
+                                PetShop.DTO.User user = new DTO.User();
+                                foreach (DataRow row in dt.Rows)
                                 {
                                     uID = int.Parse(row["MaKH"].ToString());
                                     uName = row["Ten"].ToString().Trim();
-                                    PetShop.DTO.User user = new DTO.User(uID, uName, accID);
-                                    TrangChuKhachHang trangChuKhachHang = new TrangChuKhachHang(user);
-                                    trangChuKhachHang.Show();
-                                }    
+                                    user = new DTO.User(uID, uName, accID);
+                                }
+                                TrangChuKhachHang trangChuKhachHang = new TrangChuKhachHang(user);
+                                trangChuKhachHang.Show();
                             }  
                             else
                             {
-                                string sql = "select MaNV from NhanVien where MaTK ='" + accID + "'";
-                                int uId = int.Parse(function.RunQuery(sql));
-                                sql = "select Ten from NhanVien where MaNV ='" + uId + "'";
-                                string uName = function.RunQuery(sql).Trim();
-                                User.setUserInfo(uId, uName, accID);
-                                TrangChu trang = new TrangChu();
+                                int uID;
+                                string uName;
+                                DataTable dt = bus.getEmplByAccID(accID);
+                                PetShop.DTO.User user = new DTO.User();
+                                foreach (DataRow row in dt.Rows)
+                                {
+                                    uID = int.Parse(row["MaNV"].ToString());
+                                    uName = row["Ten"].ToString().Trim();
+                                    user = new DTO.User(uID, uName, accID);
+                                }
+                                TrangChu trang = new TrangChu(user);
                                 trang.Show();
                             }
                             bus.close();
@@ -102,47 +108,6 @@ namespace PetShop
                     }    
                     else
                         MessageBox.Show("Không tìm thấy email");
-
-                    //string sql = "select password from TaiKhoan where email ='" + txtEmail.Texts + "'";
-                    //string pass = function.RunQuery(sql);
-                    //pass = pass.Trim();
-                    //if (pass == null)
-                    //    MessageBox.Show("Không tìm thấy email");
-                    //else
-                    //{
-                    //    string hashPass = function.Encrypt(txtPassWord.Texts);
-                    //    if (pass == hashPass)
-                    //    {
-                    //        sql = "select MaTK from TaiKhoan where email ='" + txtEmail.Texts + "'";
-                    //        string accID = function.RunQuery(sql).Trim();
-                    //        string uName;
-                    //        int uId;
-                    //        if (accID.Substring(0, 2) == "KH")
-                    //        {
-                    //            sql = "select MaKH from KhachHang where MaTK ='" + accID + "'";
-                    //            uId = int.Parse(function.RunQuery(sql));
-                    //            sql = "select Ten from KhachHang where MaKH ='" + uId + "'";
-                    //            uName = function.RunQuery(sql).Trim();
-                    //            PetShop.DTO.User user = new DTO.User(uId, uName, accID);
-                    //            TrangChuKhachHang trangChuKhachHang = new TrangChuKhachHang(user);
-                    //            trangChuKhachHang.Show();
-                    //        }
-                    //        else
-                    //        {
-                    //            sql = "select MaNV from NhanVien where MaTK ='" + accID + "'";
-                    //            uId = int.Parse(function.RunQuery(sql));
-                    //            sql = "select Ten from NhanVien where MaNV ='" + uId + "'";
-                    //            uName = function.RunQuery(sql).Trim();
-                    //            User.setUserInfo(uId, uName, accID);
-                    //            TrangChu trang = new TrangChu();
-                    //            trang.Show();
-                    //        }
-                    //        this.Hide();
-                    //    }
-
-                    //    else
-                    //        MessageBox.Show("Sai mật khẩu");
-                    //}
                 } 
                     
             }    

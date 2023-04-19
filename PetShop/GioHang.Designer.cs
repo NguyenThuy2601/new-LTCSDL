@@ -115,6 +115,7 @@
             this.btnThanhToan.Text = "THANH TOÁN";
             this.btnThanhToan.TextColor = System.Drawing.Color.Indigo;
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // label4
             // 

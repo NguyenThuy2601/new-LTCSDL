@@ -1,4 +1,5 @@
 ﻿using PetShop.DAO;
+using PetShop.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace PetShop.BUS
 {
-    public class DangKyBUS
+    public class DangKyBUS :ModelBUS
     {
-        SQLfunction sQLfunction = null;
-        public void load()
-        {
-            sQLfunction = new SQLfunction();
-            sQLfunction.Connect();
-        }
+        
         public bool checkEmail(string email)
         {
             string sql = "select MaTK from TaiKhoan where email = '" + email + "'";
@@ -36,22 +32,22 @@ namespace PetShop.BUS
             return TKid;
         }
 
-        public int createCusAcc(string ID, string pass, string email)
+        public int createCusAcc(Account ac)
         {
-            string sql = "insert into TaiKhoan values ('" + ID + "','" + email + "','"
-                                    + pass + "')";
+            string sql = "insert into TaiKhoan values ('" + ac.Id + "','" + ac.Email + "','"
+                                    + ac.Password + "')";
             return sQLfunction.RunNonQuery(sql);
         }
 
-        public int createCusInfo(int id ,string Fname, string Lname, string sdt, string address,string accID, DateTime dob)
+        public int createCusInfo(KhachHang khach)
         {
-            string sql = "insert into KhachHang values('" + id + "',N'"
-                                + Fname + "',N'"
-                                + Lname + "','"
-                                + sdt + "',N'"
-                                + address + "','"
-                                + accID + "','"
-                                + dob + "')";
+            string sql = "insert into KhachHang values('" + khach.Id + "',N'"
+                                + khach.ten + "',N'"
+                                + khach.hoLot + "','"
+                                + khach.sDT + "',N'"
+                                + khach.diaChi + "','"
+                                + khach.AccID1 + "','"
+                                + khach.Dob + "')";
             return sQLfunction.RunNonQuery(sql);
         }
 
@@ -61,9 +57,6 @@ namespace PetShop.BUS
             return sQLfunction.RunNonQuery(sql);
         }
 
-        public void close()
-        {
-            sQLfunction.Disconnect();
-        }
+        
     }
 }

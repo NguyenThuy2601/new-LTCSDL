@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PetShop.BUS;
+using PetShop.DTO;
 
 namespace PetShop
 {
@@ -89,10 +90,13 @@ namespace PetShop
                         {
                             string hashPass = CommonFunction.Encrypt(txtPassWord.Texts);
                             string idAcc = bus.createCusAccId();
-                            if (bus.createCusAcc(idAcc, hashPass, txtEmail.Texts) != 0)
+                            Account account = new Account(idAcc, txtEmail.Texts, hashPass);
+                            
+                            if (bus.createCusAcc(account) != 0)
                             {
                                 int cusID = int.Parse(idAcc.Substring(2));
-                                if (bus.createCusInfo(cusID, txtTen.Texts, txtHo.Texts, txtSDT.Texts, txtDiaChi.Texts, idAcc, dateNgaySinh.Value) != 0)
+                                KhachHang kh = new KhachHang(cusID, dateNgaySinh.Value, txtHo.Texts, txtTen.Texts, txtSDT.Texts, txtDiaChi.Texts, idAcc);
+                                if (bus.createCusInfo(kh) != 0)
                                 {
                                     if (bus.createCartForCus(cusID) == 0)
                                         MessageBox.Show("Đã có lỗi xảy ra ! Vui lòng thử lại");
@@ -111,53 +115,6 @@ namespace PetShop
                                 MessageBox.Show("Đã có lỗi xảy ra ! Vui lòng thử lại");
                         }    
                     }    
-
-                    //bool chkEmail = true;
-                    //string sql = "select MaTK from TaiKhoan where email = '" + txtEmail.Texts + "'";
-                    //if (function.RunQuery(sql) != null)
-                    //    chkEmail = false;
-                    //MessageBox.Show(chkEmail.ToString());
-                    //if (chkEmail == false)
-                    //{
-                    //    MessageBox.Show("Email này đã được dùng");
-                    //    txtEmail.Texts = "";
-                    //    txtEmail.Focus();
-                    //}
-                    //else
-                    //{
-                    //    if (txtPassWord.Texts != txtXacNhanPW.Texts)
-                    //    {
-                    //        MessageBox.Show("Password không khớp nhau");
-                    //        txtPassWord.Texts = txtXacNhanPW.Texts = "";
-                    //        txtPassWord.Focus();
-                    //    }
-                    //    else
-                    //    {
-                    //        string hashPass = function.Encrypt(txtPassWord.Texts);
-                    //        sql = "select count (MaTK) from TaiKhoan where SUBSTRING(MaTK,1,2) = 'KH'";
-                    //        string result = (int.Parse(function.RunQuery(sql)) + 1).ToString();
-                    //        int num = 1000 + int.Parse(result);
-                    //        string TKid = "KH" + num.ToString().Substring(1);
-                    //        sql = "insert into TaiKhoan values ('" + TKid + "','" + txtEmail.Texts + "','"
-                    //                + hashPass + "')";
-                    //        function.RunNonQuery(sql);
-                    //        sql = "insert into KhachHang values('" + result + "',N'"
-                    //            + txtTen.Texts + "',N'"
-                    //            + txtHo.Texts + "','"
-                    //            + txtSDT.Texts + "',N'"
-                    //            + txtDiaChi + "','"
-                    //            + TKid + "','"
-                    //            + dateNgaySinh.Value + "')";
-                    //        function.RunNonQuery(sql);
-                    //        sql = "insert into GioHang(MaKH) values('" + result + "')";
-                    //        function.RunNonQuery(sql);
-                    //        DangNhap f = new DangNhap();
-                    //        f.Show();
-                    //        this.Close();
-                    //    }
-                    //}
-
-
                 }
             }    
               
@@ -167,6 +124,11 @@ namespace PetShop
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+            pictureBox1.LoadAsync(@"https://res.cloudinary.com/drrmia1ij/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1677065950/Capture-removebg_k3mb53.jpg");
         }
     }
 

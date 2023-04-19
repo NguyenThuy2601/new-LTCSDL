@@ -107,7 +107,6 @@
             this.pnTTDonHang.Name = "pnTTDonHang";
             this.pnTTDonHang.Size = new System.Drawing.Size(1182, 172);
             this.pnTTDonHang.TabIndex = 3;
-            this.pnTTDonHang.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTTDonHang_Paint);
             // 
             // panel1
             // 
@@ -126,8 +125,10 @@
             this.dgvListCTDH.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvListCTDH.Location = new System.Drawing.Point(0, 278);
             this.dgvListCTDH.Name = "dgvListCTDH";
+            this.dgvListCTDH.ReadOnly = true;
             this.dgvListCTDH.RowHeadersWidth = 51;
             this.dgvListCTDH.RowTemplate.Height = 24;
+            this.dgvListCTDH.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvListCTDH.Size = new System.Drawing.Size(1182, 220);
             this.dgvListCTDH.TabIndex = 5;
             // 
@@ -151,8 +152,10 @@
             this.dgvListDH.Name = "dgvListDH";
             this.dgvListDH.RowHeadersWidth = 51;
             this.dgvListDH.RowTemplate.Height = 24;
+            this.dgvListDH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListDH.Size = new System.Drawing.Size(1182, 200);
             this.dgvListDH.TabIndex = 3;
+            this.dgvListDH.Click += new System.EventHandler(this.dgvListDH_Click);
             // 
             // lbListDH
             // 
@@ -175,6 +178,7 @@
             this.Controls.Add(this.pnTTDonHang);
             this.Name = "frmDHDaHuy";
             this.Text = "ĐƠN HÀNG ĐÃ HỦY";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDHDaHuy_FormClosed);
             this.Load += new System.EventHandler(this.frmDHDaHuy_Load);
             this.gbTimMaDH.ResumeLayout(false);
             this.gbTimMaDH.PerformLayout();

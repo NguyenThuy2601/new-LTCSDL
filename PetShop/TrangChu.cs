@@ -1,14 +1,23 @@
 using PetShop;
 using System.Data.SqlClient;
+using PetShop.BUS;
 
 namespace BanHangChoPet
 {
     public partial class TrangChu : Form
     {
+        ModelBUS bus = new ModelBUS();
+        PetShop.DTO.User user;
+        
         public TrangChu()
         {
             InitializeComponent();
             customDesign();
+        }
+
+        public TrangChu(PetShop.DTO.User user) : this()
+        {
+            this.user = user;   
         }
 
         private void customDesign()
@@ -41,14 +50,14 @@ namespace BanHangChoPet
         #region DonHangSubMenu 
         private void btDHDoiXacNhan_Click(object sender, EventArgs e)
         {
-            openChildForm(new DHDoiXacNhan());
+            openChildForm(new DHDoiXacNhan(user));
             hideSubMenu();
         }
 
         private void BtDHDaXacNhan_Click(object sender, EventArgs e)
         {
             //code
-            openChildForm(new frmDonHangDaXN());
+            openChildForm(new frmDonHangDaXN(user));
             hideSubMenu();
         }
 
@@ -83,14 +92,19 @@ namespace BanHangChoPet
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-            function.Connect();
+            //function.Connect();
+            bus.load();
             picLogo.LoadAsync(@"https://res.cloudinary.com/drrmia1ij/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1677065950/Capture-removebg_k3mb53.jpg");
         }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            function.Disconnect();
+            
+            bus.close();
+            TrangChuKhachHang f = new TrangChuKhachHang();
+
             this.Close();
+            f.Show();
 
         }
 
@@ -101,19 +115,25 @@ namespace BanHangChoPet
 
         private void btNhanVien_Click(object sender, EventArgs e)
         {
-            openChildForm(new QLNhanVien());
+            openChildForm(new QLNhanVien(user));
             hideSubMenu();
         }
 
         private void btKhachHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new QLKH());
+            openChildForm(new QLKH(user));
             hideSubMenu();
         }
 
         private void btDoanhThu_Click(object sender, EventArgs e)
         {
             openChildForm(new DoanhThu());
+            hideSubMenu();
+        }
+
+        private void btKhuyenMai_Click(object sender, EventArgs e)
+        {
+            openChildForm(new KhuyenMai());
             hideSubMenu();
         }
     }

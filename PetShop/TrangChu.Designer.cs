@@ -144,6 +144,7 @@
             this.btKhuyenMai.Text = "Khuyến Mãi";
             this.btKhuyenMai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btKhuyenMai.UseVisualStyleBackColor = true;
+            this.btKhuyenMai.Click += new System.EventHandler(this.btKhuyenMai_Click);
             // 
             // pnDonHangSubMenu
             // 

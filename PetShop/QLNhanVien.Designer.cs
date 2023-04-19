@@ -248,6 +248,7 @@
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // pnDSNV
             // 
@@ -440,6 +441,7 @@
             this.Name = "QLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLNhanVien_FormClosed);
             this.Load += new System.EventHandler(this.QLNhanVien_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgwNV)).EndInit();
             this.gbSearch.ResumeLayout(false);

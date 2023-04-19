@@ -32,9 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btHuy = new System.Windows.Forms.Button();
             this.btXacNhan = new System.Windows.Forms.Button();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.txtMaDon = new System.Windows.Forms.TextBox();
-            this.lbTinhTrangDH = new System.Windows.Forms.Label();
             this.lbMaDon = new System.Windows.Forms.Label();
             this.lbDHDoiXacNhan = new System.Windows.Forms.Label();
             this.gbTimMaDH = new System.Windows.Forms.GroupBox();
@@ -56,9 +54,7 @@
             this.pnTTDonHang.Controls.Add(this.panel1);
             this.pnTTDonHang.Controls.Add(this.btHuy);
             this.pnTTDonHang.Controls.Add(this.btXacNhan);
-            this.pnTTDonHang.Controls.Add(this.txtTinhTrang);
             this.pnTTDonHang.Controls.Add(this.txtMaDon);
-            this.pnTTDonHang.Controls.Add(this.lbTinhTrangDH);
             this.pnTTDonHang.Controls.Add(this.lbMaDon);
             this.pnTTDonHang.Controls.Add(this.lbDHDoiXacNhan);
             this.pnTTDonHang.Controls.Add(this.gbTimMaDH);
@@ -85,6 +81,7 @@
             this.btHuy.TabIndex = 27;
             this.btHuy.Text = "Huỷ";
             this.btHuy.UseVisualStyleBackColor = true;
+            this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
             // 
             // btXacNhan
             // 
@@ -97,33 +94,17 @@
             this.btXacNhan.UseVisualStyleBackColor = true;
             this.btXacNhan.Click += new System.EventHandler(this.btXacNhan_Click);
             // 
-            // txtTinhTrang
-            // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(762, 82);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(320, 30);
-            this.txtTinhTrang.TabIndex = 26;
-            // 
             // txtMaDon
             // 
-            this.txtMaDon.Location = new System.Drawing.Point(762, 42);
+            this.txtMaDon.Location = new System.Drawing.Point(762, 74);
             this.txtMaDon.Name = "txtMaDon";
             this.txtMaDon.Size = new System.Drawing.Size(320, 30);
             this.txtMaDon.TabIndex = 26;
             // 
-            // lbTinhTrangDH
-            // 
-            this.lbTinhTrangDH.AutoSize = true;
-            this.lbTinhTrangDH.Location = new System.Drawing.Point(584, 86);
-            this.lbTinhTrangDH.Name = "lbTinhTrangDH";
-            this.lbTinhTrangDH.Size = new System.Drawing.Size(172, 22);
-            this.lbTinhTrangDH.TabIndex = 25;
-            this.lbTinhTrangDH.Text = "Tình trạng đơn hàng:";
-            // 
             // lbMaDon
             // 
             this.lbMaDon.AutoSize = true;
-            this.lbMaDon.Location = new System.Drawing.Point(584, 45);
+            this.lbMaDon.Location = new System.Drawing.Point(589, 82);
             this.lbMaDon.Name = "lbMaDon";
             this.lbMaDon.Size = new System.Drawing.Size(118, 22);
             this.lbMaDon.TabIndex = 25;
@@ -242,6 +223,7 @@
             this.Name = "DHDoiXacNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DHChuaXacNhan";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DHDoiXacNhan_FormClosed);
             this.Load += new System.EventHandler(this.DHDoiXacNhan_Load);
             this.pnTTDonHang.ResumeLayout(false);
             this.pnTTDonHang.PerformLayout();
@@ -264,8 +246,6 @@
         private Label lbMaDon;
         private Button btHuy;
         private Button btXacNhan;
-        private TextBox txtTinhTrang;
-        private Label lbTinhTrangDH;
         private Button btTim;
         private Panel panel1;
         private Label lbListDH;

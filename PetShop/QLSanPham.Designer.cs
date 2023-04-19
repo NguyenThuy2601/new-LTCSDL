@@ -36,7 +36,6 @@
             this.lbDMCon = new System.Windows.Forms.Label();
             this.lbDTSuDung = new System.Windows.Forms.Label();
             this.lbKhuyenMai = new System.Windows.Forms.Label();
-            this.lbKeyword = new System.Windows.Forms.Label();
             this.lbTenSP = new System.Windows.Forms.Label();
             this.lbSoLuong = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
@@ -56,11 +55,13 @@
             this.txtFindName = new System.Windows.Forms.TextBox();
             this.txtFindCode = new System.Windows.Forms.TextBox();
             this.btSearch = new System.Windows.Forms.Button();
-            this.listBoxKW = new System.Windows.Forms.ListBox();
-            this.txtKwInfo = new System.Windows.Forms.TextBox();
             this.lbGiaNhap = new System.Windows.Forms.Label();
             this.pnNhapThongTinSP = new System.Windows.Forms.Panel();
-            this.btnDelKW = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lbTimTheoMaSP = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnSearchName = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.chkTinhTrang = new System.Windows.Forms.CheckBox();
             this.txtCode = new System.Windows.Forms.TextBox();
@@ -74,19 +75,14 @@
             this.btBack = new System.Windows.Forms.Button();
             this.dgwListSP = new System.Windows.Forms.DataGridView();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lbTimTheoMaSP = new System.Windows.Forms.Label();
-            this.btnSearchName = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuongSP)).BeginInit();
             this.pnNhapThongTinSP.SuspendLayout();
-            this.pnListSP.SuspendLayout();
-            this.pnThoat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwListSP)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.pnListSP.SuspendLayout();
+            this.pnThoat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwListSP)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMaSP
@@ -167,16 +163,6 @@
             this.lbKhuyenMai.TabIndex = 0;
             this.lbKhuyenMai.Text = "Khuyến mãi:";
             // 
-            // lbKeyword
-            // 
-            this.lbKeyword.AutoSize = true;
-            this.lbKeyword.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.lbKeyword.Location = new System.Drawing.Point(862, 141);
-            this.lbKeyword.Name = "lbKeyword";
-            this.lbKeyword.Size = new System.Drawing.Size(66, 17);
-            this.lbKeyword.TabIndex = 0;
-            this.lbKeyword.Text = "Keyword:";
-            // 
             // lbTenSP
             // 
             this.lbTenSP.AutoSize = true;
@@ -248,6 +234,11 @@
             this.numSoLuongSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numSoLuongSP.Font = new System.Drawing.Font("Times New Roman", 9F);
             this.numSoLuongSP.Location = new System.Drawing.Point(956, 91);
+            this.numSoLuongSP.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numSoLuongSP.Name = "numSoLuongSP";
             this.numSoLuongSP.Size = new System.Drawing.Size(110, 25);
             this.numSoLuongSP.TabIndex = 2;
@@ -260,6 +251,7 @@
             this.cbbKhuyenMai.Name = "cbbKhuyenMai";
             this.cbbKhuyenMai.Size = new System.Drawing.Size(110, 25);
             this.cbbKhuyenMai.TabIndex = 3;
+            this.cbbKhuyenMai.SelectedIndexChanged += new System.EventHandler(this.cbbKhuyenMai_SelectedIndexChanged);
             // 
             // cbbDMCon
             // 
@@ -286,7 +278,7 @@
             // btThem
             // 
             this.btThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThem.Location = new System.Drawing.Point(455, 206);
+            this.btThem.Location = new System.Drawing.Point(504, 207);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 37);
             this.btThem.TabIndex = 5;
@@ -297,7 +289,7 @@
             // btSua
             // 
             this.btSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSua.Location = new System.Drawing.Point(565, 206);
+            this.btSua.Location = new System.Drawing.Point(606, 207);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(75, 37);
             this.btSua.TabIndex = 5;
@@ -308,7 +300,7 @@
             // btXoa
             // 
             this.btXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btXoa.Location = new System.Drawing.Point(674, 206);
+            this.btXoa.Location = new System.Drawing.Point(716, 207);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(75, 36);
             this.btXoa.TabIndex = 5;
@@ -367,26 +359,6 @@
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // listBoxKW
-            // 
-            this.listBoxKW.FormattingEnabled = true;
-            this.listBoxKW.HorizontalScrollbar = true;
-            this.listBoxKW.ItemHeight = 19;
-            this.listBoxKW.Location = new System.Drawing.Point(937, 168);
-            this.listBoxKW.Name = "listBoxKW";
-            this.listBoxKW.Size = new System.Drawing.Size(150, 118);
-            this.listBoxKW.TabIndex = 9;
-            this.listBoxKW.SelectedIndexChanged += new System.EventHandler(this.listBoxKW_SelectedIndexChanged);
-            // 
-            // txtKwInfo
-            // 
-            this.txtKwInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKwInfo.Enabled = false;
-            this.txtKwInfo.Location = new System.Drawing.Point(937, 136);
-            this.txtKwInfo.Name = "txtKwInfo";
-            this.txtKwInfo.Size = new System.Drawing.Size(150, 26);
-            this.txtKwInfo.TabIndex = 10;
-            // 
             // lbGiaNhap
             // 
             this.lbGiaNhap.AutoSize = true;
@@ -400,7 +372,6 @@
             // pnNhapThongTinSP
             // 
             this.pnNhapThongTinSP.Controls.Add(this.tabControl1);
-            this.pnNhapThongTinSP.Controls.Add(this.btnDelKW);
             this.pnNhapThongTinSP.Controls.Add(this.btnReset);
             this.pnNhapThongTinSP.Controls.Add(this.chkTinhTrang);
             this.pnNhapThongTinSP.Controls.Add(this.txtCode);
@@ -409,8 +380,6 @@
             this.pnNhapThongTinSP.Controls.Add(this.label2);
             this.pnNhapThongTinSP.Controls.Add(this.label1);
             this.pnNhapThongTinSP.Controls.Add(this.lbGiaNhap);
-            this.pnNhapThongTinSP.Controls.Add(this.txtKwInfo);
-            this.pnNhapThongTinSP.Controls.Add(this.listBoxKW);
             this.pnNhapThongTinSP.Controls.Add(this.cbbDanhMuc);
             this.pnNhapThongTinSP.Controls.Add(this.btXoa);
             this.pnNhapThongTinSP.Controls.Add(this.btSua);
@@ -426,7 +395,6 @@
             this.pnNhapThongTinSP.Controls.Add(this.txtMaSP);
             this.pnNhapThongTinSP.Controls.Add(this.lbSoLuong);
             this.pnNhapThongTinSP.Controls.Add(this.lbTenSP);
-            this.pnNhapThongTinSP.Controls.Add(this.lbKeyword);
             this.pnNhapThongTinSP.Controls.Add(this.lbKhuyenMai);
             this.pnNhapThongTinSP.Controls.Add(this.lbDTSuDung);
             this.pnNhapThongTinSP.Controls.Add(this.lbDMCon);
@@ -441,21 +409,66 @@
             this.pnNhapThongTinSP.Size = new System.Drawing.Size(1130, 343);
             this.pnNhapThongTinSP.TabIndex = 0;
             // 
-            // btnDelKW
+            // tabControl1
             // 
-            this.btnDelKW.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelKW.Location = new System.Drawing.Point(1093, 133);
-            this.btnDelKW.Name = "btnDelKW";
-            this.btnDelKW.Size = new System.Drawing.Size(34, 28);
-            this.btnDelKW.TabIndex = 18;
-            this.btnDelKW.Text = "X";
-            this.btnDelKW.UseVisualStyleBackColor = true;
-            this.btnDelKW.Click += new System.EventHandler(this.btnDelKW_Click);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(6, 212);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(405, 125);
+            this.tabControl1.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lbTimTheoMaSP);
+            this.tabPage1.Controls.Add(this.txtFindCode);
+            this.tabPage1.Controls.Add(this.btSearch);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(397, 93);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Tìm sản phẩm theo mã";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lbTimTheoMaSP
+            // 
+            this.lbTimTheoMaSP.AutoSize = true;
+            this.lbTimTheoMaSP.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lbTimTheoMaSP.Location = new System.Drawing.Point(6, 29);
+            this.lbTimTheoMaSP.Name = "lbTimTheoMaSP";
+            this.lbTimTheoMaSP.Size = new System.Drawing.Size(91, 17);
+            this.lbTimTheoMaSP.TabIndex = 1;
+            this.lbTimTheoMaSP.Text = "Mã sản phẩm:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnSearchName);
+            this.tabPage2.Controls.Add(this.txtFindName);
+            this.tabPage2.Controls.Add(this.lbTimTheoTenSP);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(397, 93);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tìm sản phẩm theo tên";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchName
+            // 
+            this.btnSearchName.Location = new System.Drawing.Point(316, 30);
+            this.btnSearchName.Name = "btnSearchName";
+            this.btnSearchName.Size = new System.Drawing.Size(78, 25);
+            this.btnSearchName.TabIndex = 6;
+            this.btnSearchName.Text = "Tìm ";
+            this.btnSearchName.UseVisualStyleBackColor = true;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // btnReset
             // 
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.Location = new System.Drawing.Point(779, 206);
+            this.btnReset.Location = new System.Drawing.Point(830, 206);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 36);
             this.btnReset.TabIndex = 17;
@@ -466,13 +479,12 @@
             // chkTinhTrang
             // 
             this.chkTinhTrang.AutoSize = true;
-            this.chkTinhTrang.Location = new System.Drawing.Point(504, 179);
+            this.chkTinhTrang.Location = new System.Drawing.Point(865, 139);
             this.chkTinhTrang.Name = "chkTinhTrang";
-            this.chkTinhTrang.Size = new System.Drawing.Size(134, 23);
+            this.chkTinhTrang.Size = new System.Drawing.Size(117, 23);
             this.chkTinhTrang.TabIndex = 16;
-            this.chkTinhTrang.Text = "Ngưng sản xuất";
+            this.chkTinhTrang.Text = "Còn sản xuất";
             this.chkTinhTrang.UseVisualStyleBackColor = true;
-            this.chkTinhTrang.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtCode
             // 
@@ -586,62 +598,6 @@
             this.lbTitle.Text = "DANH SÁCH SẢN PHẨM";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(6, 212);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(405, 125);
-            this.tabControl1.TabIndex = 19;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.lbTimTheoMaSP);
-            this.tabPage1.Controls.Add(this.txtFindCode);
-            this.tabPage1.Controls.Add(this.btSearch);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(397, 93);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Tìm sản phẩm theo mã";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnSearchName);
-            this.tabPage2.Controls.Add(this.txtFindName);
-            this.tabPage2.Controls.Add(this.lbTimTheoTenSP);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(397, 93);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Tìm sản phẩm theo tên";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // lbTimTheoMaSP
-            // 
-            this.lbTimTheoMaSP.AutoSize = true;
-            this.lbTimTheoMaSP.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.lbTimTheoMaSP.Location = new System.Drawing.Point(6, 29);
-            this.lbTimTheoMaSP.Name = "lbTimTheoMaSP";
-            this.lbTimTheoMaSP.Size = new System.Drawing.Size(91, 17);
-            this.lbTimTheoMaSP.TabIndex = 1;
-            this.lbTimTheoMaSP.Text = "Mã sản phẩm:";
-            // 
-            // btnSearchName
-            // 
-            this.btnSearchName.Location = new System.Drawing.Point(316, 30);
-            this.btnSearchName.Name = "btnSearchName";
-            this.btnSearchName.Size = new System.Drawing.Size(78, 25);
-            this.btnSearchName.TabIndex = 6;
-            this.btnSearchName.Text = "Tìm ";
-            this.btnSearchName.UseVisualStyleBackColor = true;
-            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
-            // 
             // QLSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -654,18 +610,19 @@
             this.Name = "QLSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sản phẩm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLSanPham_FormClosed);
             this.Load += new System.EventHandler(this.QLSanPham_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuongSP)).EndInit();
             this.pnNhapThongTinSP.ResumeLayout(false);
             this.pnNhapThongTinSP.PerformLayout();
-            this.pnListSP.ResumeLayout(false);
-            this.pnThoat.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwListSP)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.pnListSP.ResumeLayout(false);
+            this.pnThoat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgwListSP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -680,7 +637,6 @@
         private Label lbDMCon;
         private Label lbDTSuDung;
         private Label lbKhuyenMai;
-        private Label lbKeyword;
         private Label lbTenSP;
         private Label lbSoLuong;
         private TextBox txtMaSP;
@@ -700,8 +656,6 @@
         private TextBox txtFindName;
         private TextBox txtFindCode;
         private Button btSearch;
-        private ListBox listBoxKW;
-        private TextBox txtKwInfo;
         private Label lbGiaNhap;
         private Panel pnNhapThongTinSP;
         private Panel pnListSP;
@@ -717,7 +671,6 @@
         private Label label3;
         private CheckBox chkTinhTrang;
         private Button btnReset;
-        private Button btnDelKW;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Label lbTimTheoMaSP;

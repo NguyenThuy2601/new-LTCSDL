@@ -61,7 +61,7 @@
             this.tabTKTheoEmail = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKHTheoEmail = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             // 
             // btSua
             // 
-            this.btSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btSua.Location = new System.Drawing.Point(312, 196);
@@ -97,6 +97,7 @@
             this.btSua.TabIndex = 34;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // dtpNgaySinh
             // 
@@ -122,7 +123,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(128, 152);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(568, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(568, 38);
             this.txtDiaChi.TabIndex = 30;
             // 
             // lbDiachi
@@ -316,7 +317,7 @@
             this.pnNhapTTNhanVien.Controls.Add(this.txtHoTenlot);
             this.pnNhapTTNhanVien.Controls.Add(this.btnTimKiemKH);
             this.pnNhapTTNhanVien.Controls.Add(this.tabTimKiem);
-            this.pnNhapTTNhanVien.Controls.Add(this.textBox2);
+            this.pnNhapTTNhanVien.Controls.Add(this.txtPass);
             this.pnNhapTTNhanVien.Controls.Add(this.txtEmail);
             this.pnNhapTTNhanVien.Controls.Add(this.lbPassword);
             this.pnNhapTTNhanVien.Controls.Add(this.lbEmail);
@@ -349,7 +350,7 @@
             // 
             // btnTimKiemKH
             // 
-            this.btnTimKiemKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnTimKiemKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnTimKiemKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnTimKiemKH.Location = new System.Drawing.Point(820, 196);
@@ -434,14 +435,14 @@
             this.txtTimKHTheoEmail.Size = new System.Drawing.Size(200, 26);
             this.txtTimKHTheoEmail.TabIndex = 44;
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.textBox2.Location = new System.Drawing.Point(496, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 26);
-            this.textBox2.TabIndex = 40;
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.txtPass.Location = new System.Drawing.Point(496, 78);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(200, 26);
+            this.txtPass.TabIndex = 40;
             // 
             // txtEmail
             // 
@@ -472,7 +473,7 @@
             this.lbEmail.TabIndex = 39;
             this.lbEmail.Text = "Email:";
             // 
-            // QLKhachHang
+            // QLKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -481,7 +482,7 @@
             this.Controls.Add(this.pnDSNV);
             this.Controls.Add(this.pnNhapTTNhanVien);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.Name = "QLKhachHang";
+            this.Name = "QLKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLKhachHang";
             this.Load += new System.EventHandler(this.QLKhachHang_Load);
@@ -523,7 +524,7 @@
         private Label lbMaSP;
         private Label lbTen;
         private Panel pnNhapTTNhanVien;
-        private TextBox textBox2;
+        private TextBox txtPass;
         private TextBox txtEmail;
         private Label lbPassword;
         private Label lbEmail;

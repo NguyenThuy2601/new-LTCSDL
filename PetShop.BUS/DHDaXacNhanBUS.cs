@@ -18,11 +18,18 @@ namespace PetShop.BUS
                 " where DonHang.TinhTrang = 1"; 
             return sQLfunction.GetDataToTable(sql);
         }
-        public int updateOrderStatus(String idDH, int uID)
+        public int updateOrderStatus(String idDH, int uID, string note)
         {
-            string sql= "update DonHang set TinhTrang = 2 " +
-                "MaNV = " + uID +
+            string sql= "update DonHang set TinhTrang = 2, " +
+                "MaNV = " + uID + ", " +
+                "LyDoHuyDon = N'" + note + "'" +
                 "where MaDH = '" + idDH + "'";
+            return sQLfunction.RunNonQuery(sql);
+        }
+        public int refill(string pID, string qty)
+        {
+            string sql = "update SanPham set SoLuong = SoLuong + " + qty
+                        + " where MaSP = '" + pID + "'";
             return sQLfunction.RunNonQuery(sql);
         }
 

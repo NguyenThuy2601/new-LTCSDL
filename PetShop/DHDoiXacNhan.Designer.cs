@@ -43,6 +43,8 @@
             this.dgvListDH = new System.Windows.Forms.DataGridView();
             this.lbChiTietDH = new System.Windows.Forms.Label();
             this.dgvListCTDH = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.pnTTDonHang.SuspendLayout();
             this.gbTimMaDH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListDH)).BeginInit();
@@ -51,6 +53,8 @@
             // 
             // pnTTDonHang
             // 
+            this.pnTTDonHang.Controls.Add(this.txtGhiChu);
+            this.pnTTDonHang.Controls.Add(this.label1);
             this.pnTTDonHang.Controls.Add(this.panel1);
             this.pnTTDonHang.Controls.Add(this.btHuy);
             this.pnTTDonHang.Controls.Add(this.btXacNhan);
@@ -96,15 +100,15 @@
             // 
             // txtMaDon
             // 
-            this.txtMaDon.Location = new System.Drawing.Point(762, 74);
+            this.txtMaDon.Location = new System.Drawing.Point(730, 18);
             this.txtMaDon.Name = "txtMaDon";
-            this.txtMaDon.Size = new System.Drawing.Size(320, 30);
+            this.txtMaDon.Size = new System.Drawing.Size(263, 30);
             this.txtMaDon.TabIndex = 26;
             // 
             // lbMaDon
             // 
             this.lbMaDon.AutoSize = true;
-            this.lbMaDon.Location = new System.Drawing.Point(589, 82);
+            this.lbMaDon.Location = new System.Drawing.Point(606, 26);
             this.lbMaDon.Name = "lbMaDon";
             this.lbMaDon.Size = new System.Drawing.Size(118, 22);
             this.lbMaDon.TabIndex = 25;
@@ -208,6 +212,24 @@
             this.dgvListCTDH.Size = new System.Drawing.Size(1114, 220);
             this.dgvListCTDH.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(595, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 22);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Lý do hủy đơn:";
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Location = new System.Drawing.Point(730, 72);
+            this.txtGhiChu.MaxLength = 100;
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(352, 36);
+            this.txtGhiChu.TabIndex = 29;
+            // 
             // DHDoiXacNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -252,5 +274,7 @@
         private DataGridView dgvListDH;
         private Label lbChiTietDH;
         private DataGridView dgvListCTDH;
+        private TextBox txtGhiChu;
+        private Label label1;
     }
 }

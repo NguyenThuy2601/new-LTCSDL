@@ -132,27 +132,7 @@ namespace PetShop
                     resetValue();
                 }
                 else
-                    MessageBox.Show("Có lỗi xảy ra");
-                //string sql = "INSERT INTO SanPham(MaSP, TenSp, SoLuong, GiaBan, GiaNhap, MauSac,MaKM, Hinh) VALUES('"
-                //              + id + "',"
-                //              + "N'" + txtTenSP.Text + "',"
-                //              + numSoLuongSP.Value + ","
-                //              + int.Parse(txtGiaBan.Text) + ","
-                //              + int.Parse(txtGiaNhap.Text) + ",";
-                //if(color != "null")
-                //{
-                //    sql += "N";
-                //    sql = modifyString(sql, color);
-                //}    
-                //else
-                //    sql = modifyString(sql, color);
-                //sql += ",";
-                //sql = modifyString(sql, km);
-                //sql += ",";
-                //sql = modifyString(sql, pic);
-                //sql += ")";
-                //function.RunNonQuery(sql);
-
+                    MessageBox.Show("Có lỗi xảy ra");               
             }    
         }
 
@@ -221,37 +201,7 @@ namespace PetShop
                         resetValue();
                     }    
                     else
-                        MessageBox.Show("Có lỗi xảy ra");
-
-                    //string sql = "update SanPham set MaSP = '"
-                    //              + id + "',"
-                    //              + "TenSp = " + "N'" + txtTenSP.Text + "',"
-                    //              + "SoLuong = " + numSoLuongSP.Value + ","
-                    //              + "GiaBan = " + txtGiaBan.Text + ","
-                    //              + "GiaNhap = " + txtGiaNhap.Text + ","
-                    //              + "MauSac = ";
-                    //if (color != "null")
-                    //{
-                    //    sql += "N";
-                    //    sql = modifyString(sql, color);
-                    //}
-                    //else
-                    //    sql = modifyString(sql, color);
-                    //sql += ",";
-                    //sql += "MaKM = ";
-                    //sql = modifyString(sql, km);
-                    //sql += ",";
-                    //sql += "Hinh = ";
-                    //sql = modifyString(sql, pic);
-                    //if (chkTinhTrang.Checked == true)
-                    //    sql += ",TinhTrang = 0";
-                    //else
-                    //    sql += ",TinhTrang = 1";
-                    //sql += "where MaSP = '" + oldID + "'";
-
-                    //function.RunNonQuery(sql);
-
-
+                        MessageBox.Show("Có lỗi xảy ra");                    
                 }
             }
             

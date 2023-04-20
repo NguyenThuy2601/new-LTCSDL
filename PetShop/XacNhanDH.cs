@@ -125,5 +125,10 @@ namespace PetShop
             else
                 MessageBox.Show("Đã có lỗi xảy ra");
         }
+
+        private void XacNhanDH_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bus.close();
+        }
     }
 }

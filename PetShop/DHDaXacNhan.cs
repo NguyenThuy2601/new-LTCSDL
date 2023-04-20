@@ -61,15 +61,37 @@ namespace PetShop
                 return ;
             else
             {
-                if (bus.updateOrderStatus(txtMaDHHT.Text, user.getID()) > 0)
-                {
-                    MessageBox.Show("Thành công");
-                    txtMaDHHT.Text = "";
-                    LoadDataGridView();
-                    dgvListCTDH.DataSource = null;
-                }
+                if (txtGhiChu.Text == "")
+                    MessageBox.Show("Nhập nội dung hủy đơn");
                 else
-                    MessageBox.Show("Đã có lỗi xảy ra");
+                {
+                    if (bus.updateOrderStatus(txtMaDHHT.Text, user.getID(), txtGhiChu.Text) > 0)
+                    {
+                        DataTable temptb = bus.getCTDHByID(txtMaDHHT.Text);
+                        bool flag = true;
+                        foreach(DataRow row in temptb.Rows)
+                        {
+                            MessageBox.Show(row["MaSP"].ToString());
+                            //if (bus.refill(row["MaSP"].ToString(), row["SoLuong"].ToString()) < 0)
+                            //    flag = false;
+                            //if(!flag)
+                            //    break;
+                        } 
+                        if(!flag)
+                            MessageBox.Show("Có lỗi xảy ra");
+                        else
+                        {
+                            MessageBox.Show("Thành công");
+                            txtMaDHHT.Text = "";
+                            LoadDataGridView();
+                            dgvListCTDH.DataSource = null;
+                        }    
+                        
+                    }
+                    else
+                        MessageBox.Show("Đã có lỗi xảy ra");
+                }
+                
                 
             }    
 

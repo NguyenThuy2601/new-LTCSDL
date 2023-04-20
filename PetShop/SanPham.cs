@@ -23,7 +23,7 @@ namespace PetShop
         {
             InitializeComponent();
         }
-        public SanPham(string id, string pName, string price, string qty, string color, string maKM, string picLink, PetShop.DTO.User user)
+        public SanPham(string id, string pName, string price, int qty, string color, string maKM, string picLink, PetShop.DTO.User user)
         {
            
             InitializeComponent();
@@ -31,7 +31,6 @@ namespace PetShop
             ID = id;
             setPName(pName);
             setPrice(price);
-            setQty(qty);
             setColor(color);
             setPic(picLink);
             if (maKM != null)
@@ -44,7 +43,7 @@ namespace PetShop
             {
                 lblDiscount.Visible = false;
             }
-            numericUpDown1.Maximum = int.Parse(qty);
+            numericUpDown1.Maximum = qty;
 
             if (user.getID() == 0)
                 btnAddToCart.Visible = false;
@@ -69,10 +68,7 @@ namespace PetShop
         {
             lblDiscount.Text = value + "%";
         }
-        public void setQty(string value)
-        {
-            lbTonKho.Text = value;
-        }
+        
         public void setColor(string value)
         {
             lblColor.Text = value;
@@ -86,10 +82,7 @@ namespace PetShop
             lbGiaTien.ForeColor = Color.Red;
         }
 
-        public int getSoLuong()
-        {
-            return int.Parse(lbTonKho.Text);
-        }
+        
         
         public int getPrice()
         {
@@ -130,6 +123,11 @@ namespace PetShop
             //    btnAddToCart.Visible = false;
             //else
             //    btnAddToCart.Visible = true;
+        }
+
+        private void SanPham_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bus.close();
         }
     }
 }

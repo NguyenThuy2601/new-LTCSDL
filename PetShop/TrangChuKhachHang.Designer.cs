@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.helloLbl = new System.Windows.Forms.Label();
+            this.findPb = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.findTxt = new PetShop.TextBoxCustom();
             this.btnUserInfo = new PetShop.buttonCustom();
             this.btnDonHang = new PetShop.buttonCustom();
             this.btnDangXuat = new PetShop.buttonCustom();
@@ -38,13 +45,6 @@
             this.btnGioHang = new PetShop.buttonCustom();
             this.btnDanhMucCho = new PetShop.buttonCustom();
             this.btnTrangChu = new PetShop.buttonCustom();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.helloLbl = new System.Windows.Forms.Label();
-            this.findPb = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.findTxt = new PetShop.TextBoxCustom();
             this.drdMenuCho = new PetShop.dropdownMenu(this.components);
             this.thứcĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thứcĂnƯớtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,8 +91,94 @@
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 737);
+            this.panel1.Size = new System.Drawing.Size(245, 805);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flPanel
+            // 
+            this.flPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flPanel.Location = new System.Drawing.Point(247, 64);
+            this.flPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flPanel.Name = "flPanel";
+            this.flPanel.Size = new System.Drawing.Size(1117, 741);
+            this.flPanel.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel2.Controls.Add(this.helloLbl);
+            this.panel2.Controls.Add(this.findPb);
+            this.panel2.Controls.Add(this.pb2);
+            this.panel2.Controls.Add(this.findTxt);
+            this.panel2.Location = new System.Drawing.Point(247, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1117, 60);
+            this.panel2.TabIndex = 2;
+            // 
+            // helloLbl
+            // 
+            this.helloLbl.AutoSize = true;
+            this.helloLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helloLbl.ForeColor = System.Drawing.Color.Turquoise;
+            this.helloLbl.Location = new System.Drawing.Point(87, 17);
+            this.helloLbl.Name = "helloLbl";
+            this.helloLbl.Size = new System.Drawing.Size(79, 29);
+            this.helloLbl.TabIndex = 3;
+            this.helloLbl.Text = "label1";
+            // 
+            // findPb
+            // 
+            this.findPb.BackColor = System.Drawing.Color.Transparent;
+            this.findPb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.findPb.Location = new System.Drawing.Point(911, 3);
+            this.findPb.Name = "findPb";
+            this.findPb.Size = new System.Drawing.Size(64, 50);
+            this.findPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.findPb.TabIndex = 2;
+            this.findPb.TabStop = false;
+            this.findPb.Click += new System.EventHandler(this.findPb_Click);
+            // 
+            // pb2
+            // 
+            this.pb2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb2.Location = new System.Drawing.Point(6, 3);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(75, 54);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb2.TabIndex = 1;
+            this.pb2.TabStop = false;
+            this.pb2.Click += new System.EventHandler(this.pb2_Click);
+            // 
+            // findTxt
+            // 
+            this.findTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.findTxt.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.findTxt.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.findTxt.BorderSize = 2;
+            this.findTxt.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.findTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.findTxt.Location = new System.Drawing.Point(389, 10);
+            this.findTxt.Multiline = false;
+            this.findTxt.Name = "findTxt";
+            this.findTxt.Padding = new System.Windows.Forms.Padding(7);
+            this.findTxt.PasswordChar = false;
+            this.findTxt.Size = new System.Drawing.Size(516, 36);
+            this.findTxt.TabIndex = 0;
+            this.findTxt.Texts = "";
+            this.findTxt.UnderlinedStyle = false;
             // 
             // btnUserInfo
             // 
@@ -254,89 +340,6 @@
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.TextColor = System.Drawing.Color.Turquoise;
             this.btnTrangChu.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 114);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // flPanel
-            // 
-            this.flPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.flPanel.Location = new System.Drawing.Point(247, 59);
-            this.flPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flPanel.Name = "flPanel";
-            this.flPanel.Size = new System.Drawing.Size(993, 678);
-            this.flPanel.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel2.Controls.Add(this.helloLbl);
-            this.panel2.Controls.Add(this.findPb);
-            this.panel2.Controls.Add(this.pb2);
-            this.panel2.Controls.Add(this.findTxt);
-            this.panel2.Location = new System.Drawing.Point(247, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(993, 60);
-            this.panel2.TabIndex = 2;
-            // 
-            // helloLbl
-            // 
-            this.helloLbl.AutoSize = true;
-            this.helloLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helloLbl.ForeColor = System.Drawing.Color.Turquoise;
-            this.helloLbl.Location = new System.Drawing.Point(87, 17);
-            this.helloLbl.Name = "helloLbl";
-            this.helloLbl.Size = new System.Drawing.Size(79, 29);
-            this.helloLbl.TabIndex = 3;
-            this.helloLbl.Text = "label1";
-            // 
-            // findPb
-            // 
-            this.findPb.BackColor = System.Drawing.Color.Transparent;
-            this.findPb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.findPb.Location = new System.Drawing.Point(911, 3);
-            this.findPb.Name = "findPb";
-            this.findPb.Size = new System.Drawing.Size(64, 50);
-            this.findPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.findPb.TabIndex = 2;
-            this.findPb.TabStop = false;
-            this.findPb.Click += new System.EventHandler(this.findPb_Click);
-            // 
-            // pb2
-            // 
-            this.pb2.Location = new System.Drawing.Point(6, 3);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(75, 54);
-            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb2.TabIndex = 1;
-            this.pb2.TabStop = false;
-            // 
-            // findTxt
-            // 
-            this.findTxt.BackColor = System.Drawing.SystemColors.Control;
-            this.findTxt.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.findTxt.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.findTxt.BorderSize = 2;
-            this.findTxt.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.findTxt.ForeColor = System.Drawing.Color.DimGray;
-            this.findTxt.Location = new System.Drawing.Point(389, 10);
-            this.findTxt.Multiline = false;
-            this.findTxt.Name = "findTxt";
-            this.findTxt.Padding = new System.Windows.Forms.Padding(7);
-            this.findTxt.PasswordChar = false;
-            this.findTxt.Size = new System.Drawing.Size(516, 36);
-            this.findTxt.TabIndex = 0;
-            this.findTxt.Texts = "";
-            this.findTxt.UnderlinedStyle = false;
             // 
             // drdMenuCho
             // 
@@ -525,12 +528,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 738);
+            this.ClientSize = new System.Drawing.Size(1363, 806);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flPanel);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TrangChuKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ Khách Hàng";
             this.Activated += new System.EventHandler(this.TrangChuKhachHang_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrangChuKhachHang_FormClosed);

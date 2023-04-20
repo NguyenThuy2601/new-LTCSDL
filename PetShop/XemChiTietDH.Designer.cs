@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblNote = new System.Windows.Forms.Label();
             this.pnNhapTTNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDH)).BeginInit();
             this.lbltemp.SuspendLayout();
@@ -94,6 +96,8 @@
             this.lbltemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltemp.BackColor = System.Drawing.SystemColors.Control;
+            this.lbltemp.Controls.Add(this.lblNote);
+            this.lbltemp.Controls.Add(this.label6);
             this.lbltemp.Controls.Add(this.lblStatus);
             this.lbltemp.Controls.Add(this.label2);
             this.lbltemp.Controls.Add(this.lblAddress);
@@ -108,7 +112,7 @@
             this.lbltemp.ForeColor = System.Drawing.Color.MediumPurple;
             this.lbltemp.Location = new System.Drawing.Point(0, 274);
             this.lbltemp.Name = "lbltemp";
-            this.lbltemp.Size = new System.Drawing.Size(1051, 189);
+            this.lbltemp.Size = new System.Drawing.Size(1074, 189);
             this.lbltemp.TabIndex = 10;
             // 
             // lblStatus
@@ -116,7 +120,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Indigo;
-            this.lblStatus.Location = new System.Drawing.Point(814, 36);
+            this.lblStatus.Location = new System.Drawing.Point(514, 36);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(135, 25);
             this.lblStatus.TabIndex = 76;
@@ -126,7 +130,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(736, 15);
+            this.label2.Location = new System.Drawing.Point(396, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 65);
             this.label2.TabIndex = 75;
@@ -136,9 +140,9 @@
             // 
             this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.Indigo;
-            this.lblAddress.Location = new System.Drawing.Point(143, 28);
+            this.lblAddress.Location = new System.Drawing.Point(91, 28);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(505, 30);
+            this.lblAddress.Size = new System.Drawing.Size(299, 30);
             this.lblAddress.TabIndex = 74;
             this.lblAddress.Text = "Thành tiền: ";
             // 
@@ -147,7 +151,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Indigo;
-            this.lblTotal.Location = new System.Drawing.Point(814, 101);
+            this.lblTotal.Location = new System.Drawing.Point(838, 101);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(135, 25);
             this.lblTotal.TabIndex = 73;
@@ -158,7 +162,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Indigo;
-            this.label7.Location = new System.Drawing.Point(736, 101);
+            this.label7.Location = new System.Drawing.Point(722, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 25);
             this.label7.TabIndex = 72;
@@ -235,7 +239,7 @@
             this.panel2.Controls.Add(this.dgvDetail);
             this.panel2.Location = new System.Drawing.Point(0, 469);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1073, 291);
+            this.panel2.Size = new System.Drawing.Size(1073, 277);
             this.panel2.TabIndex = 11;
             // 
             // dgvDetail
@@ -248,8 +252,28 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.RowHeadersWidth = 51;
             this.dgvDetail.RowTemplate.Height = 24;
-            this.dgvDetail.Size = new System.Drawing.Size(1042, 281);
+            this.dgvDetail.Size = new System.Drawing.Size(1032, 257);
             this.dgvDetail.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Indigo;
+            this.label6.Location = new System.Drawing.Point(722, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 33);
+            this.label6.TabIndex = 77;
+            this.label6.Text = "Ghi chú:";
+            // 
+            // lblNote
+            // 
+            this.lblNote.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.ForeColor = System.Drawing.Color.Indigo;
+            this.lblNote.Location = new System.Drawing.Point(838, 28);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(188, 72);
+            this.lblNote.TabIndex = 78;
+            this.lblNote.Text = "Thành tiền: ";
             // 
             // XemChiTietDH
             // 
@@ -293,5 +317,7 @@
         private DataGridView dgvDetail;
         private Label lblStatus;
         private Label label2;
+        private Label lblNote;
+        private Label label6;
     }
 }

@@ -27,12 +27,14 @@ namespace PetShop.BUS
                         + "where MaSP = '" + idP + "'";
             return sQLfunction.RunNonQuery(sql);
         }
-        public int declineOrder(String idDH, int uID)
+        public int declineOrder(String idDH, int uID, string note)
         {
-            string sql = "update DonHang set TinhTrang = 2 " +
-                "MaNV = " + uID +
+            string sql = "update DonHang set TinhTrang = 2, " +
+                "MaNV = " + uID + ", " +
+                "LyDoHuyDon = N'" + note + "'" + 
                 "where MaDH = '" + idDH + "'";
             return sQLfunction.RunNonQuery(sql);
         }
+        
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnNhapTTNhanVien = new System.Windows.Forms.Panel();
-            this.editInfoBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -40,6 +39,7 @@
             this.lbTen = new System.Windows.Forms.Label();
             this.lbMaSP = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.editInfoBtn = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -73,21 +73,9 @@
             this.pnNhapTTNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnNhapTTNhanVien.Location = new System.Drawing.Point(0, 0);
             this.pnNhapTTNhanVien.Name = "pnNhapTTNhanVien";
-            this.pnNhapTTNhanVien.Size = new System.Drawing.Size(935, 206);
+            this.pnNhapTTNhanVien.Size = new System.Drawing.Size(1117, 206);
             this.pnNhapTTNhanVien.TabIndex = 7;
             this.pnNhapTTNhanVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnNhapTTNhanVien_Paint);
-            // 
-            // editInfoBtn
-            // 
-            this.editInfoBtn.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editInfoBtn.Location = new System.Drawing.Point(753, 19);
-            this.editInfoBtn.Name = "editInfoBtn";
-            this.editInfoBtn.Size = new System.Drawing.Size(119, 56);
-            this.editInfoBtn.TabIndex = 50;
-            this.editInfoBtn.Tag = "0";
-            this.editInfoBtn.Text = "Sửa thông tin";
-            this.editInfoBtn.UseVisualStyleBackColor = true;
-            this.editInfoBtn.Click += new System.EventHandler(this.editInfoBtn_Click);
             // 
             // label2
             // 
@@ -188,6 +176,18 @@
             this.panel3.Size = new System.Drawing.Size(901, 100);
             this.panel3.TabIndex = 51;
             // 
+            // editInfoBtn
+            // 
+            this.editInfoBtn.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editInfoBtn.Location = new System.Drawing.Point(753, 19);
+            this.editInfoBtn.Name = "editInfoBtn";
+            this.editInfoBtn.Size = new System.Drawing.Size(119, 56);
+            this.editInfoBtn.TabIndex = 50;
+            this.editInfoBtn.Tag = "0";
+            this.editInfoBtn.Text = "Sửa thông tin";
+            this.editInfoBtn.UseVisualStyleBackColor = true;
+            this.editInfoBtn.Click += new System.EventHandler(this.editInfoBtn_Click);
+            // 
             // btnXacNhan
             // 
             this.btnXacNhan.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 206);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(935, 401);
+            this.panel1.Size = new System.Drawing.Size(1117, 401);
             this.panel1.TabIndex = 8;
             // 
             // panel2
@@ -223,7 +223,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 242);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(935, 159);
+            this.panel2.Size = new System.Drawing.Size(1117, 159);
             this.panel2.TabIndex = 1;
             // 
             // lbTongTien
@@ -296,20 +296,21 @@
             this.dgwDHXN.Name = "dgwDHXN";
             this.dgwDHXN.RowHeadersWidth = 51;
             this.dgwDHXN.RowTemplate.Height = 24;
-            this.dgwDHXN.Size = new System.Drawing.Size(930, 245);
+            this.dgwDHXN.Size = new System.Drawing.Size(1117, 245);
             this.dgwDHXN.TabIndex = 0;
             // 
             // XacNhanDH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 612);
+            this.ClientSize = new System.Drawing.Size(1117, 647);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnNhapTTNhanVien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "XacNhanDH";
             this.Text = "Xác nhận đơn hàng";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.XacNhanDH_FormClosed);
             this.Load += new System.EventHandler(this.XacNhanDH_Load);
             this.pnNhapTTNhanVien.ResumeLayout(false);
             this.pnNhapTTNhanVien.PerformLayout();

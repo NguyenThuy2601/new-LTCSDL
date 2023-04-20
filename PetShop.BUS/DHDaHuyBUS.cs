@@ -37,6 +37,12 @@ namespace PetShop.BUS
             dt.DefaultView.RowFilter = string.Format("MaDH = '{0}'", code);
             return dt;
         }
+
+        public DataTable getCTDHByID(string ordID)
+        {
+            string sql = "select * from ChiTietDonHang where MaDH = '" + ordID + "'";
+            return sQLfunction.GetDataToTable(sql);
+        }
         //public void close()
         //{
         //    sQLfunction.Disconnect();

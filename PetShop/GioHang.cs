@@ -147,5 +147,10 @@ namespace PetShop
                 return;
            
         }
+
+        private void GioHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bus.close();
+        }
     }
 }

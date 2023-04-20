@@ -47,10 +47,14 @@ namespace PetShop
         {
             if(bus.acceptOrder(txtMaDon.Text, user.getID()) > 0)
             {
-                DataTable dt = bus.findOrder(tbCTDH, txtMaDon.Text);
+                DataTable dt = bus.getCTDHByID(txtMaDon.Text);
 
                 foreach (DataRow row in dt.Rows)
+                {
+                    MessageBox.Show(row["MaSP"].ToString());
                     bus.updateproductQty(row["MaSP"].ToString(), row["SoLuong"].ToString());
+                }    
+                    
                 txtMaDon.Text = "";
                 LoadDataGridView();
                 dgvListCTDH.DataSource = null;
@@ -75,16 +79,22 @@ namespace PetShop
 
         private void btHuy_Click(object sender, EventArgs e)
         {
-            if (bus.declineOrder(txtMaDon.Text, user.getID()) > 0)
-            {
-                txtMaDon.Text = "";
-                LoadDataGridView();
-                dgvListCTDH.Rows.Clear();
-            }
+            if (txtGhiChu.Text == "")
+                MessageBox.Show("Phải điền lý do hủy đơn");
             else
             {
-                MessageBox.Show("Đã có lỗi xảy ra");
+                if (bus.declineOrder(txtMaDon.Text, user.getID(), txtGhiChu.Text) > 0)
+                {
+                    txtMaDon.Text = "";
+                    LoadDataGridView();
+                    dgvListCTDH.DataSource = null;
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra");
+                }
             }
+            
         }
 
         private void DHDoiXacNhan_FormClosed(object sender, FormClosedEventArgs e)

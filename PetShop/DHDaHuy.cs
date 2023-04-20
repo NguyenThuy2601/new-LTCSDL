@@ -55,7 +55,7 @@ namespace PetShop
 
             String id = row.Cells["MaDH"].Value.ToString();
             DataTable temp = bus.findOrder(cttb, id); 
-            dgvListDH.DataSource = temp;    
+            dgvListCTDH.DataSource = temp;    
         }
     }
 }

@@ -54,7 +54,7 @@ namespace PetShop
                     string pName = row["TenSp"].ToString();
                     string color = row["MauSac"].ToString();
                     string pic = row["Hinh"].ToString();
-                    string soLuong = row["SoLuong"].ToString();
+                    int soLuong = int.Parse(row["SoLuong"].ToString());
                     string giaBan = row["GiaBan"].ToString();
 
                     string phantram = null;

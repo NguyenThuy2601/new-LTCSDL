@@ -43,6 +43,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListCTDH = new System.Windows.Forms.DataGridView();
             this.dgvListDH = new System.Windows.Forms.DataGridView();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbTimMaDH.SuspendLayout();
             this.pnTTDonHang.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -140,6 +142,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtGhiChu);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.txtMaDHHT);
             this.groupBox1.Controls.Add(this.label1);
@@ -147,7 +151,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(517, 67);
+            this.groupBox1.Size = new System.Drawing.Size(517, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đơn hàng:";
@@ -155,7 +159,7 @@
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnHuy.Location = new System.Drawing.Point(398, 19);
+            this.btnHuy.Location = new System.Drawing.Point(412, 19);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(86, 38);
             this.btnHuy.TabIndex = 2;
@@ -213,7 +217,24 @@
             this.dgvListDH.Size = new System.Drawing.Size(1125, 200);
             this.dgvListDH.TabIndex = 1;
             this.dgvListDH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListDH_CellMouseClick);
-
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Location = new System.Drawing.Point(124, 63);
+            this.txtGhiChu.MaxLength = 100;
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(374, 22);
+            this.txtGhiChu.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 16);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Lý do hủy đơn:";
             // 
             // frmDonHangDaXN
             // 
@@ -255,5 +276,7 @@
         private Button btnHuy;
         private TextBox txtMaDHHT;
         private Label label1;
+        private TextBox txtGhiChu;
+        private Label label2;
     }
 }

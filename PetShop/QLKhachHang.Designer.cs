@@ -485,6 +485,7 @@
             this.Name = "QLKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLKhachHang";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLKH_FormClosed);
             this.Load += new System.EventHandler(this.QLKhachHang_Load);
             this.pnTitle.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

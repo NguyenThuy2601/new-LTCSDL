@@ -27,10 +27,10 @@ namespace PetShop.BUS
                 " when TinhTrang = 0 then N'đang đợi xác nhận'" +
                 " when TinhTrang = 1 then N'Được xác nhận'" +
                 " else N'Bị hủy'" +
-                " end as Status " +
+                " end as Status, LyDoHuyDon " +
                 " from DonHang d, ChiTietDonHang ct" +
-                " where d.MaDH = ct.MaDH and d.MaKH = " + uID + 
-                " group by d.MaDH, d.DiaChi, d.NgayDat, d.PhanTramShip, d.TinhTrang";
+                " where d.MaDH = ct.MaDH and d.MaKH = " + uID +
+                " group by d.MaDH, d.DiaChi, d.NgayDat, d.PhanTramShip, d.TinhTrang, LyDoHuyDon";
             return sQLfunction.GetDataToTable(sql);
         }
 

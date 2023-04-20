@@ -27,7 +27,14 @@ namespace PetShop
             this.user = user;
             bus = new XemChiTietDHBUS();
         }
+        public void initDGV()
+        {
+            dgvDH.AllowUserToAddRows = false;
+            dgvDH.EditMode = DataGridViewEditMode.EditProgrammatically;
 
+            dgvDetail.AllowUserToAddRows = false;
+            dgvDetail.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
         private void XemChiTietDH_Load(object sender, EventArgs e)
         {
             bus.load();
@@ -37,6 +44,7 @@ namespace PetShop
             lblShip.Text = "";
             lblTotal.Text = "";
             lblAddress.Text = "";
+            lblNote.Text = "";
         }
 
         private void dgvDH_Click(object sender, EventArgs e)
@@ -48,6 +56,7 @@ namespace PetShop
             lblTotal.Text = row.Cells["Tong"].Value.ToString();
             lblAddress.Text = row.Cells["DiaChi"].Value.ToString();
             lblStatus.Text = row.Cells["Status"].Value.ToString();
+            lblNote.Text = row.Cells["LyDoHuyDon"].Value.ToString();
 
             dgvDetail.DataSource = bus.filterCTDH(row.Cells["MaDH"].Value.ToString(), dt);
         }

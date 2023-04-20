@@ -76,6 +76,10 @@ namespace PetShop
         {
            
         }
+        public void setUname(User user)
+        {
+            helloLbl.Text = String.Format("Hi, {0}", user.getName());
+        }
 
         private void TrangChuKhachHang_Activated(object sender, EventArgs e)
         {
@@ -89,7 +93,7 @@ namespace PetShop
 
                 pb2.Visible = true;
                 helloLbl.Visible = true;
-                helloLbl.Text = String.Format("Hi, {0}", user.getName());
+                setUname(user);
             }    
                 
             else
@@ -151,7 +155,12 @@ namespace PetShop
 
         private void buttonCustom1_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new UserInfo(user));
+            openChildForm(new UserInfo(user, this));
+        }
+
+        private void pb2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UserInfo(user, this));
         }
     }
 }

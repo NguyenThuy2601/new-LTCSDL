@@ -158,7 +158,7 @@
             this.lblChangePass.AutoSize = true;
             this.lblChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblChangePass.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChangePass.Location = new System.Drawing.Point(347, 388);
+            this.lblChangePass.Location = new System.Drawing.Point(142, 388);
             this.lblChangePass.Name = "lblChangePass";
             this.lblChangePass.Size = new System.Drawing.Size(122, 25);
             this.lblChangePass.TabIndex = 20;
@@ -196,7 +196,7 @@
             this.btnConfrimPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfrimPass.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnConfrimPass.ForeColor = System.Drawing.Color.Indigo;
-            this.btnConfrimPass.Location = new System.Drawing.Point(588, 480);
+            this.btnConfrimPass.Location = new System.Drawing.Point(356, 616);
             this.btnConfrimPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfrimPass.Name = "btnConfrimPass";
             this.btnConfrimPass.Size = new System.Drawing.Size(113, 40);
@@ -253,7 +253,7 @@
             this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.buttonCustom1.ForeColor = System.Drawing.Color.Indigo;
-            this.buttonCustom1.Location = new System.Drawing.Point(490, 336);
+            this.buttonCustom1.Location = new System.Drawing.Point(371, 381);
             this.buttonCustom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCustom1.Name = "buttonCustom1";
             this.buttonCustom1.Size = new System.Drawing.Size(113, 40);
@@ -382,7 +382,7 @@
             this.btnUpdateUInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUInfo.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnUpdateUInfo.ForeColor = System.Drawing.Color.Indigo;
-            this.btnUpdateUInfo.Location = new System.Drawing.Point(655, 250);
+            this.btnUpdateUInfo.Location = new System.Drawing.Point(655, 267);
             this.btnUpdateUInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateUInfo.Name = "btnUpdateUInfo";
             this.btnUpdateUInfo.Size = new System.Drawing.Size(113, 40);
@@ -396,7 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 713);
+            this.ClientSize = new System.Drawing.Size(883, 741);
             this.Controls.Add(this.btnConfrimPass);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.txtNewPass);

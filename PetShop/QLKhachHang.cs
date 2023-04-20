@@ -121,5 +121,10 @@ namespace PetShop
                     MessageBox.Show("Đã có lỗi xảy ra trong update tài khoản");
             }
         }
+
+        private void QLKH_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bus.close();
+        }
     }
 }

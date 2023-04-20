@@ -50,8 +50,8 @@ namespace PetShop.BUS
         public int createOrder(Order od)
         {
             String sql = String.Format("insert into DonHang " +
-                "                   values('{0}',getdate(),{1},N'{2}',{3},{4},{5})",
-                          od.Id, od.TinhTrang, od.Diachi, "null", od.UserID, od.Ship);
+                "                   values('{0}',getdate(),{1},N'{2}',{3},{4},{5},{6})",
+                          od.Id, od.TinhTrang, od.Diachi, "null", od.UserID, od.Ship, "null");
             return sQLfunction.RunNonQuery(sql);
         }
 

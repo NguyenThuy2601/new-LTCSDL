@@ -27,6 +27,7 @@ namespace PetShop.DTO
         }
         public int getID() { return Id; }
         public string getName() { return Name; }
+        public void setName(String name) { Name = name; }
         public string getAccountId() { return AccountId; }
         public void setUserInfo(int id, string name, string account)
         {

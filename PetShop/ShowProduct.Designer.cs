@@ -44,14 +44,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 698);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1098, 717);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pb404
             // 
             this.pb404.Location = new System.Drawing.Point(7, 3);
             this.pb404.Name = "pb404";
-            this.pb404.Size = new System.Drawing.Size(978, 698);
+            this.pb404.Size = new System.Drawing.Size(1098, 726);
             this.pb404.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb404.TabIndex = 1;
             this.pb404.TabStop = false;
@@ -60,7 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 713);
+            this.ClientSize = new System.Drawing.Size(1117, 741);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pb404);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

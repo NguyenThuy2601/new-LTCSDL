@@ -18,7 +18,7 @@ namespace PetShop.BUS
                          "from SanPham  as s " +
                          "left join KhuyenMai as km"
                            + " on s.MaKM = km.MaKM"
-                           + " where s.MaSP like '" + temp[0] + "%'";
+                           + " where s.TinhTrang = 1 and s.SoLuong > 0 and s.MaSP like '" + temp[0] + "%'";
                 if(temp.Length > 1)
                     for(int i = 1; i < temp.Length; i++)
                         sql += " or s.MaSP like '" + temp[i] + "%'"; 

@@ -18,14 +18,16 @@ namespace PetShop
         UserProfileBUS bus = new UserProfileBUS();
         KhachHang kh = null;
         Account ac = null;
+        TrangChuKhachHang f = null;
         public UserInfo()
         {
             InitializeComponent();
         }
 
-        public UserInfo(DTO.User user) :this()
+        public UserInfo(DTO.User user, TrangChuKhachHang f) : this()
         {
             this.user = user;
+            this.f = f;
         }
         public void setVissibleStatus()
         {
@@ -147,6 +149,10 @@ namespace PetShop
                 kh.sDT = txtSDT.Texts;
                 kh.diaChi = txtDiaChi.Texts;
                 kh.Dob = dtpDOB.Value;
+
+                user.setName(kh.ten);
+
+                f.setUname(user);
 
 
                 if (bus.updateUserInfo(kh, user.getID()) > 0)

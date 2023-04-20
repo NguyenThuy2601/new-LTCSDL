@@ -54,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 301);
+            this.panel1.Size = new System.Drawing.Size(1069, 301);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -64,7 +64,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(825, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(1063, 296);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
@@ -80,7 +80,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label1.Location = new System.Drawing.Point(12, 380);
+            this.label1.Location = new System.Drawing.Point(12, 406);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 25);
             this.label1.TabIndex = 1;
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 423);
+            this.label3.Location = new System.Drawing.Point(12, 449);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 25);
             this.label3.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnThanhToan.ForeColor = System.Drawing.Color.Indigo;
-            this.btnThanhToan.Location = new System.Drawing.Point(605, 461);
+            this.btnThanhToan.Location = new System.Drawing.Point(680, 458);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(188, 40);
@@ -129,18 +129,17 @@
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblName.Location = new System.Drawing.Point(150, 327);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 25);
+            this.lblName.Size = new System.Drawing.Size(370, 52);
             this.lblName.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label5.Location = new System.Drawing.Point(440, 334);
+            this.label5.Location = new System.Drawing.Point(665, 327);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 7;
@@ -157,7 +156,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnDelete.ForeColor = System.Drawing.Color.Indigo;
-            this.btnDelete.Location = new System.Drawing.Point(702, 319);
+            this.btnDelete.Location = new System.Drawing.Point(942, 312);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 40);
@@ -171,7 +170,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblTotal.Location = new System.Drawing.Point(162, 423);
+            this.lblTotal.Location = new System.Drawing.Point(162, 449);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(22, 25);
             this.lblTotal.TabIndex = 10;
@@ -181,7 +180,7 @@
             // 
             this.lblShip.AutoSize = true;
             this.lblShip.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblShip.Location = new System.Drawing.Point(162, 380);
+            this.lblShip.Location = new System.Drawing.Point(162, 406);
             this.lblShip.Name = "lblShip";
             this.lblShip.Size = new System.Drawing.Size(22, 25);
             this.lblShip.TabIndex = 11;
@@ -191,7 +190,7 @@
             // 
             this.lblQty2.AutoSize = true;
             this.lblQty2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblQty2.Location = new System.Drawing.Point(546, 334);
+            this.lblQty2.Location = new System.Drawing.Point(771, 327);
             this.lblQty2.Name = "lblQty2";
             this.lblQty2.Size = new System.Drawing.Size(22, 25);
             this.lblQty2.TabIndex = 12;
@@ -208,7 +207,7 @@
             this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.buttonCustom1.ForeColor = System.Drawing.Color.Indigo;
-            this.buttonCustom1.Location = new System.Drawing.Point(587, 315);
+            this.buttonCustom1.Location = new System.Drawing.Point(812, 308);
             this.buttonCustom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCustom1.Name = "buttonCustom1";
             this.buttonCustom1.Size = new System.Drawing.Size(45, 34);
@@ -229,7 +228,7 @@
             this.buttonCustom2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCustom2.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.buttonCustom2.ForeColor = System.Drawing.Color.Indigo;
-            this.buttonCustom2.Location = new System.Drawing.Point(587, 353);
+            this.buttonCustom2.Location = new System.Drawing.Point(812, 346);
             this.buttonCustom2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCustom2.Name = "buttonCustom2";
             this.buttonCustom2.Size = new System.Drawing.Size(45, 33);

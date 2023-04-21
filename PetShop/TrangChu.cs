@@ -136,5 +136,11 @@ namespace BanHangChoPet
             openChildForm(new KhuyenMai());
             hideSubMenu();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EmplInfo(user));
+            hideSubMenu();
+        }
     }
 }

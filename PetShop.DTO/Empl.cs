@@ -16,6 +16,17 @@ namespace PetShop.DTO
         private String SDT;
         private String DiaChi;
         private String AccID;
+        private String email;
+
+        public int ID1 { get => ID; set => ID = value; }
+        public string HoLot1 { get => HoLot; set => HoLot = value; }
+        public string Ten1 { get => Ten; set => Ten = value; }
+        public string CMND1 { get => CMND; set => CMND = value; }
+        public DateTime DOB1 { get => DOB; set => DOB = value; }
+        public string SDT1 { get => SDT; set => SDT = value; }
+        public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
+        public string AccID1 { get => AccID; set => AccID = value; }
+        public string Email { get => email; set => email = value; }
 
         public Empl(int iD, string hoLot, string ten, string cMND, DateTime dOB, string sDT, string diaChi, string accID)
         {
@@ -40,13 +51,10 @@ namespace PetShop.DTO
             AccID = accID;
         }
 
-        public string HoLot1 { get => HoLot; }
-        public string Ten1 { get => Ten; }
-        public string CMND1 { get => CMND;}
-        public DateTime DOB1 { get => DOB;}
-        public string SDT1 { get => SDT;}
-        public string DiaChi1 { get => DiaChi;}
-        public string AccID1 { get => AccID;}
-        public int ID1 { get => ID;}
+        public Empl()
+        {
+        }
+
+        
     }
 }

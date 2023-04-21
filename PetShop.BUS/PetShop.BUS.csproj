@@ -47,6 +47,7 @@
     <Compile Include="DHDaHuyBUS.cs" />
     <Compile Include="DHDaXacNhanBUS.cs" />
     <Compile Include="DHDoiXacNhanBUS.cs" />
+    <Compile Include="EmplBus.cs" />
     <Compile Include="GioHangBUS.cs" />
     <Compile Include="KhuyenMaiBUS.cs" />
     <Compile Include="ModelBUS.cs" />

@@ -43,6 +43,7 @@
             this.pnLogo = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnChildForm = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnSlideMenu.SuspendLayout();
             this.pnDonHangSubMenu.SuspendLayout();
             this.pnLogo.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             this.pnSlideMenu.AutoScroll = true;
             this.pnSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(172)))));
+            this.pnSlideMenu.Controls.Add(this.button1);
             this.pnSlideMenu.Controls.Add(this.btThoat);
             this.pnSlideMenu.Controls.Add(this.btDoanhThu);
             this.pnSlideMenu.Controls.Add(this.btKhachHang);
@@ -265,6 +267,22 @@
             this.pnChildForm.Size = new System.Drawing.Size(1080, 745);
             this.pnChildForm.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(0, 632);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 58);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Thông tin user";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -304,5 +322,6 @@
         private Button btKhuyenMai;
         private Panel pnChildForm;
         private PictureBox picLogo;
+        private Button button1;
     }
 }

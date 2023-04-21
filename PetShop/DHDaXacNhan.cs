@@ -71,11 +71,11 @@ namespace PetShop
                         bool flag = true;
                         foreach(DataRow row in temptb.Rows)
                         {
-                            MessageBox.Show(row["MaSP"].ToString());
-                            //if (bus.refill(row["MaSP"].ToString(), row["SoLuong"].ToString()) < 0)
-                            //    flag = false;
-                            //if(!flag)
-                            //    break;
+                            //MessageBox.Show(row["MaSP"].ToString());
+                            if (bus.refill(row["MaSP"].ToString(), row["SoLuong"].ToString()) < 0)
+                                flag = false;
+                            if (!flag)
+                                break;
                         } 
                         if(!flag)
                             MessageBox.Show("Có lỗi xảy ra");

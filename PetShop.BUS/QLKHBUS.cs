@@ -42,7 +42,7 @@ namespace PetShop.BUS
         public int updateCusAccount(Account ac)
         {
             string sql = "update TaiKhoan set email = '" + ac.Email + "'";
-            if (ac.Password != null)
+            if (ac.Password != "")
                 sql += ",password = '" + CommonFunction.Encrypt(ac.Password) + "' ";
             sql += "where MaTK = '" + ac.Id + "'";
             return sQLfunction.RunNonQuery(sql);

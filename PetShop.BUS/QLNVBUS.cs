@@ -59,9 +59,10 @@ namespace PetShop.BUS
 
         public int updateTaiKhoan(Account ac)
         {
-            string sql = "update TaiKhoan set email = '" + ac.Email + "',"
-               + "password = '" + ac.Password + "' "
-               + "where MaTK = '" + ac.Id + "'";
+            string sql = "update TaiKhoan set email = '" + ac.Email + "'";
+            if (ac.Password != "")
+                sql += ", password = '" + CommonFunction.Encrypt(ac.Password) + "' ";
+            sql +=  "where MaTK = '" + ac.Id + "'";
             return sQLfunction.RunNonQuery(sql);
         }
 

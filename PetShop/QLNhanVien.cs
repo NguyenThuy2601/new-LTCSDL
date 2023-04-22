@@ -119,15 +119,18 @@ namespace PetShop
         private void btnSua_Click(object sender, EventArgs e)
         {
             string idTK = dgwNV.CurrentRow.Cells["MaTK"].Value.ToString();
-            string pass = function.Encrypt(txtPass.Text);
+            string pass = txtPass.Text;
+            
             string idNV = dgwNV.CurrentRow.Cells["MaNV"].Value.ToString();
 
             Account ac = new Account(idTK, txtEmail.Text, pass);
+            
             Empl empl = new Empl(int.Parse(idNV), txtHoTenlot.Text, txtTen.Text,
                                   txtCMND.Text, dtpNgaySinh.Value.Date,
                                   txtSDT.Text, txtDiaChi.Text, ac.Id);
             if (bus.updateTaiKhoan(ac) > 0)
             {
+                
                 if (bus.updateNhanVien(empl) > 0)
                 {
                     MessageBox.Show("Thành công");

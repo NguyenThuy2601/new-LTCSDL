@@ -51,7 +51,7 @@ namespace PetShop
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    MessageBox.Show(row["MaSP"].ToString());
+                    //MessageBox.Show(row["MaSP"].ToString());
                     bus.updateproductQty(row["MaSP"].ToString(), row["SoLuong"].ToString());
                 }    
                     

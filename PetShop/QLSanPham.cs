@@ -153,9 +153,8 @@ namespace PetShop
                             dgwListSP.CurrentRow.Cells["MaSP"].Value.ToString().Substring(2, 1));
             txtCode.Text = dgwListSP.CurrentRow.Cells["MaSP"].Value.ToString().Substring(4);
             txtPic.Text = bus.isNullBlank(dgwListSP.CurrentRow.Cells["Hinh"].Value.ToString());
-            cbbKhuyenMai.SelectedValue = dgwListSP.CurrentRow.Cells["MaKM"].Value.ToString();
-            cbbKhuyenMai.SelectedItem = dgwListSP.CurrentRow.Cells["MaKM"].Value.ToString();
-            if (bool.Parse(dgwListSP.CurrentRow.Cells["TinhTrang"].Value.ToString()) == false)
+            cbbKhuyenMai.Text = dgwListSP.CurrentRow.Cells["MaKM"].Value.ToString();
+            if (bool.Parse(dgwListSP.CurrentRow.Cells["TinhTrang"].Value.ToString()) == true)
                 chkTinhTrang.Checked = true;
             btThem.Enabled = false;
 
@@ -186,9 +185,9 @@ namespace PetShop
                     string pic = bus.isNull(txtPic.Text);
                     int Soluong = (int)numSoLuongSP.Value;
                     string km = bus.isNull(cbbKhuyenMai.Text);
-                    string id = bus.generateIDFromOption(cbbDanhMuc.SelectedItem.ToString().Substring(0, 2),
-                                                    cbbDoiTuongSD.SelectedItem.ToString(),
-                                                    cbbDMCon.SelectedItem.ToString(),
+                    string id = bus.generateIDFromOption(cbbDanhMuc.Text.Substring(0, 2),
+                                                    cbbDoiTuongSD.Text.ToString(),
+                                                    cbbDMCon.Text.ToString(),
                                                     txtCode.Text.Trim());
 
                     Product sp = new Product(id, txtTenSP.Text, Soluong,

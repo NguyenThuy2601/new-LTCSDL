@@ -64,10 +64,14 @@ namespace PetShop
                 {
                     if(bus.getPass(txtEmail.Texts) != null)
                     {
-                        string pass = bus.getPass(txtEmail.Texts);
+                        string pass = bus.getPass(txtEmail.Texts.Trim());
+                        
                         pass = pass.Trim();
+                       
                         string hashPass = CommonFunction.Encrypt(txtPassWord.Texts);
-                        if(pass == hashPass)
+
+                        
+                        if (pass == hashPass)
                         {
                             string accID = bus.getAcc(txtEmail.Texts);
                             if(accID.Substring(0, 2) == "KH")
